@@ -1,0 +1,20 @@
+input_dir: holyland.ios/Resources/
+output_dir: holyland.ios/Resources/Generated
+
+xcassets:
+  inputs:
+    - Assets.xcassets
+    - Color.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: XCAssets+Generated.swift
+
+fonts:
+  inputs: Fonts
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: Fonts+Generated.swift

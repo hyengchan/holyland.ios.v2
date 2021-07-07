@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "btnSetting.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

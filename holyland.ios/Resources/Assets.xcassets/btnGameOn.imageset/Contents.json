@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "btnGameOn.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

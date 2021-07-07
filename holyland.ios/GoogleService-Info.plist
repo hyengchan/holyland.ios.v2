@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>248981659088-1qof66j9gor6p8ehrpdf0mghhnb7e517.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.248981659088-1qof66j9gor6p8ehrpdf0mghhnb7e517</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA-WIxBQeV-SmOK11grn1umpJecE9yFTgo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>248981659088</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.kumnan.ios.apps.holyland</string>
+	<key>PROJECT_ID</key>
+	<string>kumnanholyland</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kumnanholyland.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:248981659088:ios:33a79ab370b516c2d8add5</string>
+	<key>DATABASE_URL</key>
+	<string>https://kumnanholyland.firebaseio.com</string>
+</dict>
+</plist>
