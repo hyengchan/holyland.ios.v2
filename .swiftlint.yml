@@ -1,0 +1,59 @@
+disabled_rules: # 실행에서 제외할 룰 식별자들
+  - trailing_whitespace # From https://realm.github.io/SwiftLint/trailing_whitespace.html
+  - large_tuple # From https://realm.github.io/SwiftLint/large_tuple.html
+  - vertical_parameter_alignment # From https://realm.github.io/SwiftLint/vertical_parameter_alignment.html
+  - todo # From https://realm.github.io/SwiftLint/todo.html
+  - type_body_length # From https://realm.github.io/SwiftLint/type_body_length.html
+  
+opt_in_rules:
+  - empty_count # From https://realm.github.io/SwiftLint/empty_count.html
+  - vertical_parameter_alignment_on_call # From https://realm.github.io/SwiftLint/vertical_parameter_alignment_on_call.html
+  - closure_end_indentation # From https://realm.github.io/SwiftLint/closure_end_indentation.html
+  - closure_spacing # From https://realm.github.io/SwiftLint/closure_spacing.html
+  - comment_spacing # From https://realm.github.io/SwiftLint/comment_spacing.html
+  - explicit_init # From https://realm.github.io/SwiftLint/explicit_init.html
+  - fatal_error_message # From https://realm.github.io/SwiftLint/fatal_error_message.html
+  - first_where # From https://realm.github.io/SwiftLint/first_where.html
+  - overridden_super_call # From https://realm.github.io/SwiftLint/overridden_super_call.html
+  - protocol_property_accessors_order # From https://realm.github.io/SwiftLint/protocol_property_accessors_order.html
+
+included: # 린트 과정에 포함할 파일 경로. 이 항목이 존재하면 `--path`는 무시됨
+  - holyland.ios
+  
+excluded: # 린트 과정에서 무시할 파일 경로. `included`보다 우선순위 높음
+  - Carthage
+  - Pods
+  - holyland.ios/Common/Extension/UIColor+.swift
+  - holyland.ios/Common/Extension/Realm+.swift
+
+trailing_whitespace: # From https://realm.github.io/SwiftLint/trailing_whitespace.html
+    ignores_empty_lines: true
+    
+force_cast: # From https://realm.github.io/SwiftLint/force_cast.html
+    warning
+force_try: # From https://realm.github.io/SwiftLint/force_try.html
+    warning
+    
+function_body_length: # From https://realm.github.io/SwiftLint/function_body_length.html
+    warning: 100
+    error: 200
+
+line_length: # From https://realm.github.io/SwiftLint/line_length.html
+    warning: 180
+    error: 300
+    ignores_comments: true
+    ignores_urls: true
+    ignores_function_declarations: true
+  
+file_length: # From https://realm.github.io/SwiftLint/file_length.html
+    warning: 600
+
+identifier_name: # From https://realm.github.io/SwiftLint/identifier_name.html
+    excluded: [x, y]
+    min_length: 2
+    allowed_symbols: "_"
+    
+cyclomatic_complexity: # From https://realm.github.io/SwiftLint/cyclomatic_complexity.html
+    ignores_case_statements: true
+    warning: 15
+
