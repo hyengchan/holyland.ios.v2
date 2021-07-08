@@ -1,13 +1,13 @@
 //
-//  ObtainableGoldKeyInfo.swift
+//  GoldKeyResponse.swift
 //  holyland.ios
 //
-//  Created by 윤형찬 on 2021/06/10.
+//  Created by 윤형찬 on 2021/07/08.
 //
 
 import Foundation
 
-struct ObtainableGoldKeyInfo: Codable {
+struct GoldKeyResponse: Decodable, DTO {
     let weekDay: Bool
     let weekNight: Bool
     let liveTab: Bool
@@ -20,7 +20,7 @@ struct ObtainableGoldKeyInfo: Codable {
     let boxCrash: Bool
     let total: Int
     let holyLevel: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case weekDay = "week_day"
         case weekNight = "week_night"
@@ -32,6 +32,16 @@ struct ObtainableGoldKeyInfo: Codable {
         case morningTreat = "morningtreat"
         case roulette
         case boxCrash = "boxcrash"
+        case total
+        case holyLevel = "holylevel"
+    }
+}
+
+struct GoldKeyInfoResponse: Decodable, DTO {
+    let total: Int
+    let holyLevel: Int
+
+    enum CodingKeys: String, CodingKey {
         case total
         case holyLevel = "holylevel"
     }

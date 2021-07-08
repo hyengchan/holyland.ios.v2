@@ -24,21 +24,21 @@ class MainCoordinator: BaseCoordinator<Void> {
         let vc = container.resolve(MainViewController.self)!
         navigationController.pushViewController(vc, animated: true)
 
-        vc.viewModel.output.myPageTap
+        vc.viewModel.input.myPageTap
             .flatMap { [unowned self] in
                 coordinate(to: MyPageCoordinator(container: container, navigationController: navigationController))
             }
             .subscribe()
             .disposed(by: rx.disposeBag)
 
-        vc.viewModel.output.qrPageTap
+        vc.viewModel.input.qrPageTap
             .flatMap { [unowned self] in
                 coordinate(to: QRPageCoordinator(container: container, navigationController: navigationController))
             }
             .subscribe()
             .disposed(by: rx.disposeBag)
 
-        vc.viewModel.output.profileTap
+        vc.viewModel.input.profileTap
             .subscribe( { _ in print("ButtonTapped") })
             .disposed(by: rx.disposeBag)
 

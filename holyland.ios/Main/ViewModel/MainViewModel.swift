@@ -26,28 +26,36 @@ class MainViewModel: ViewModelType {
 
     // MARK: Output properties
     private let userRepository: UserRepository
+    private let goldKeyRepository: GoldKeyRepository
 
-    struct Input { }
-
-    struct Output {
-        let user: BehaviorRelay<User?>
+    struct Input {
         let myPageTap: PublishSubject<Void>
         let qrPageTap: PublishSubject<Void>
         let profileTap: PublishSubject<Void>
     }
 
+    struct Output {
+        let user: BehaviorRelay<User?>
+        let goldkey: BehaviorRelay<Int>
+        let holylevel: BehaviorRelay<Int>
+        let obtainableGoldKeys: BehaviorRelay<GoldKeyResponse?>
+    }
+
     let input: Input
     let output: Output
     
-    init(userRepository: UserRepository, container: Container) {
+    init(userRepository: UserRepository, goldKeyRepository: GoldKeyRepository, container: Container) {
         self.userRepository = userRepository
+        self.goldKeyRepository = goldKeyRepository
         self.container = container
         
-        input = Input()
+        input = Input(myPageTap: myPageSubject,
+                      qrPageTap: qrPageSubject,
+                      profileTap: profileSubject)
         output = Output(user: self.userRepository.user,
-                        myPageTap: myPageSubject,
-                        qrPageTap: qrPageSubject,
-                        profileTap: profileSubject)
+                        goldkey: self.goldKeyRepository.goldkey,
+                        holylevel: self.goldKeyRepository.holyLevel,
+                        obtainableGoldKeys: self.goldKeyRepository.obtainableGoldKeys)
     }
 
     func didTapMyPage() -> CocoaAction {

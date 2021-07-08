@@ -13,7 +13,12 @@ import Action
 import Swinject
 import NSObject_Rx
 
-class LoginViewModel: ViewModelType {
+struct Credentials {
+    let idx: String
+    let password: String
+}
+
+class LoginViewModel {
     
     // MARK: properties
     private let bag = DisposeBag()
@@ -26,15 +31,9 @@ class LoginViewModel: ViewModelType {
     private let didTapLoginButton = PublishSubject<Credentials>()
 
     // MARK: output properties
-    private let credentialsObservable: Observable<Credentials>
-    private let signInResultSubject = PublishSubject<User>()
+    private let signInResultSubject = PublishSubject<Void>()
     private let invalidLoginErrorsSubject = PublishSubject<Error>()
     private let serverConnectionErrorsSubject = PublishSubject<Error>()
-
-    struct Credentials {
-        let idx: String
-        let password: String
-    }
 
     private let topics: [String: String] = [
         "영유아부": Constants.Topic.infants,
@@ -44,32 +43,22 @@ class LoginViewModel: ViewModelType {
         "소년부": Constants.Topic.boys
     ]
 
-    struct Input {
-        let id: BehaviorRelay<String>
-        let password: BehaviorRelay<String>
-        let tapButton: PublishSubject<Credentials>
-    }
-
-    struct Output {
-        let enableSignInButton: Driver<Bool>
-        let credential: Observable<Credentials>
-        let resultSubject: PublishSubject<User>
-        let serverErrorObservable: Driver<Error>
-        let loginErrorsObservable: Driver<Error>
-    }
-
     let input: Input
     let output: Output
+
+    lazy var signInObservable = didTapLoginButton
+        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+        .flatMapLatest { [unowned self] in self.userRepository.siginIn(credentials: $0) }
     
     init(userRepository: UserRepository, container: Container) {
         self.userRepository = userRepository
         self.container = container
 
-        self.credentialsObservable = Observable.combineLatest(idRelay, passwordRelay) { (idx, password) in
+        let credentialsObservable = Observable.combineLatest(idRelay, passwordRelay) { (idx, password) in
             return Credentials(idx: idx, password: password)
         }
 
-        let isConfirmEnabled = self.credentialsObservable
+        let isConfirmEnabled = credentialsObservable
             .map { !$0.idx.isEmpty && !$0.password.isEmpty }
             .asDriver(onErrorJustReturn: false)
 
@@ -83,54 +72,38 @@ class LoginViewModel: ViewModelType {
                         serverErrorObservable: serverConnectionErrorsSubject.asDriverOnErrorJustComplete(),
                         loginErrorsObservable: invalidLoginErrorsSubject.asDriverOnErrorJustComplete())
 
-        subscribeLoginButtonTap()
-    }
-}
+        signInObservable
+            .subscribe(onNext: { [unowned self] response in
+                switch response {
+                case .success(let idx):
+                    userRepository.userInfo(idx: idx)
+                    UserPersistentStorage.loggedInIdx = idx
 
-extension LoginViewModel {
-
-    func subscribeLoginButtonTap() {
-        didTapLoginButton
-            .flatMapLatest { [weak self] credentials -> Observable<Int?> in
-                return (self?.signIn(with: credentials) ?? Observable.just(nil))
-            }
-            .addSchedulers()
-            .compactMap { $0 }
-            .flatMapLatest { (idx) in
-                self.userInfo(by: idx)
-            }
-            .catch { [weak self] (error) -> Observable<User?> in
-                self?.serverConnectionErrorsSubject.onNext(error)
-                return Observable.never()
-            }
-            .asDriver(onErrorJustReturn: nil)
-            .compactMap { $0 }
-            .drive(onNext: { [weak self] (user) in
-                self?.signInResultSubject.onNext(user)
+                    self.signInResultSubject.onNext(())
+                case .failure(let error):
+                    if error is NetworkError, error as? NetworkError == NetworkError.endpointError {
+                        self.serverConnectionErrorsSubject.onNext(error)
+                    } else {
+                        self.invalidLoginErrorsSubject.onNext(error)
+                    }
+                }
             })
             .disposed(by: bag)
     }
-    
-    func signIn(with credentials: Credentials) -> Observable<Int?> {
-        self.userRepository.siginIn(idx: credentials.idx, password: credentials.password)
-            .catch { (error) -> Observable<Int?> in
-                if let networkError = error as? NetworkError,
-                   networkError == NetworkError.endpointError {
-                    self.serverConnectionErrorsSubject.onNext(error)
-                } else {
-                    self.invalidLoginErrorsSubject.onNext(error)
-                }
-                return Observable.never()
-            }
+}
 
+extension LoginViewModel: ViewModelType {
+    struct Input {
+        let id: BehaviorRelay<String>
+        let password: BehaviorRelay<String>
+        let tapButton: PublishSubject<Credentials>
     }
 
-    func userInfo(by idx: Int) -> Observable<User?> {
-        self.userRepository.userInfo(idx: idx)
-            .do(onNext: { [weak self] (user) in
-                guard let user = user else { return }
-                UserDefaultsStorage.saveLoggedInUserIdx(user.idx)
-                UserDefaultsStorage.updateShouldDeletedWhenSignOut(with: false)
-            })
+    struct Output {
+        let enableSignInButton: Driver<Bool>
+        let credential: Observable<Credentials>
+        let resultSubject: PublishSubject<Void>
+        let serverErrorObservable: Driver<Error>
+        let loginErrorsObservable: Driver<Error>
     }
 }

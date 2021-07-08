@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+
+class UserViewModel {
+    var user = BehaviorSubject<User?>(value: nil)
+}

@@ -11,11 +11,6 @@ import RealmSwift
 
 extension AppDelegate {
     internal func setupDependencies() {
-//        
-//        container.register(SceneCoordinatorType.self) { _ in
-//            SceneCoordinator(window: self.window!)
-//        }
-//        .inObjectScope(ObjectScope.container)
         
         // MARK: - Persistant storage
         container.register(Realm.Configuration.self) { _ in
@@ -29,24 +24,34 @@ extension AppDelegate {
         .inObjectScope(ObjectScope.container)
 
         // MARK: - DataSources
-        container.register(LocalDataSource.self) { resolver in
-            LocalDataSourceImpl(realm: resolver.resolve(Realm.self)!)
+        container.register(UserLocalDataSouce.self) { resolver in
+            RealmUserStorage(instance: resolver.resolve(Realm.self)!)
         }
-        .inObjectScope(ObjectScope.container)
-        
-        container.register(UserDataSource.self) { _ in
-            UserDataSourceImpl()
+
+        container.register(UserRemoteDataSource.self) { _ in
+            UserRemoteDataSourceImpl()
         }
-        .inObjectScope(ObjectScope.container)
-        
+
+        container.register(GoldKeyDataSource.self) { _ in
+            GoldKeyDataSourceImpl()
+        }
+
         // MARK: - Repositories
         container.register(UserRepository.self) { resolver in
-            UserRepositoryImpl(userDataSource: resolver.resolve(UserDataSource.self)!,
-                               localDataSource: resolver.resolve(LocalDataSource.self)!)
+            UserRepositoryImpl(userDataSource: resolver.resolve(UserRemoteDataSource.self)!,
+                               localDataSource: resolver.resolve(UserLocalDataSouce.self)!)
         }
-        .inObjectScope(ObjectScope.container)
+
+        container.register(GoldKeyRepository.self) { resolver in
+            GoldKeyRepositoryImpl(goldKeyDataSource: resolver.resolve(GoldKeyDataSource.self)!)
+        }
         
         // MARK: - ViewModels
+        container.register(UserViewModel.self) { _ in
+            UserViewModel()
+        }
+        .inObjectScope(ObjectScope.container)
+
         container.register(LoginViewModel.self) { resolver in
             LoginViewModel(userRepository: resolver.resolve(UserRepository.self)!,
                            container: self.container)
@@ -55,6 +60,7 @@ extension AppDelegate {
         
         container.register(MainViewModel.self) { resolver in
             MainViewModel(userRepository: resolver.resolve(UserRepository.self)!,
+                          goldKeyRepository: resolver.resolve(GoldKeyRepository.self)!,
                           container: self.container)
         }
         .inObjectScope(ObjectScope.container)
@@ -83,7 +89,7 @@ extension AppDelegate {
         container.register(MainViewController.self) { resolver in
             let viewController = MainViewController()
             viewController.viewModel = resolver.resolve(MainViewModel.self)
-            viewController.videoListModel = resolver.resolve(VideoListViewModel.self)
+            viewController.videoListViewModel = resolver.resolve(VideoListViewModel.self)
             return viewController
         }
 

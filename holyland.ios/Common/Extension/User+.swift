@@ -11,13 +11,11 @@ import UIKit
 extension User {
     var isChild: Bool { self.userLevel == 5 }
     
-    var gender: Gender { userGender ? .female : .male }
-    
     var classIdx: Int? {
-        if classDay < 9999 {
-            return classDay
-        } else if classNight > 9999 {
-            return classNight
+        if classDayInfo.id < 9999 {
+            return classDayInfo.id
+        } else if classNightInfo.id > 9999 {
+            return classNightInfo.id
         } else {
           return nil
         }
@@ -26,17 +24,17 @@ extension User {
     var nameWithChurchDuties: String {
         switch userLevel {
         case 0:
-            return userName + "목사님"
+            return name + "목사님"
         case 1:
-            return userName + "전도사님"
+            return name + "전도사님"
         case 2:
-            return userName + "팀장님"
+            return name + "팀장님"
         case 3:
-            return userName + "부장님"
+            return name + "부장님"
         case 4:
-            return userName + "선생님"
+            return name + "선생님"
         default:
-            return userName
+            return name
         }
     }
     
@@ -54,7 +52,7 @@ extension User {
     }
     
     var defaultClassName: String {
-        !classDayStr.isEmpty ? classDayStr : classNightStr
+        !classDayInfo.name.isEmpty ? classDayInfo.name : classNightInfo.name
     }
     
     var classTeacherName: String {

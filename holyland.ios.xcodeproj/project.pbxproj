@@ -14,11 +14,6 @@
 		3A666F68269423730069262B /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F67269423730069262B /* VideoCollectionViewCell.swift */; };
 		3A666F6A269425DD0069262B /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F69269425DD0069262B /* VideoListViewModel.swift */; };
 		3A666F6C26944BFB0069262B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F6B26944BFB0069262B /* MainView.swift */; };
-		3A6798092671DD29003A0191 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6798082671DD29003A0191 /* NetworkRouter.swift */; };
-		3A67980B2671DD47003A0191 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67980A2671DD47003A0191 /* NetworkClient.swift */; };
-		3A67980D2671DD62003A0191 /* NetworkClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67980C2671DD62003A0191 /* NetworkClientHelper.swift */; };
-		3A67980F2671DD9A003A0191 /* AccessTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67980E2671DD9A003A0191 /* AccessTokenStorage.swift */; };
-		3A6798132671DDC3003A0191 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6798122671DDC3003A0191 /* User.swift */; };
 		3A7C46DE2682C7BE002AD73C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C46DD2682C7BE002AD73C /* MainCoordinator.swift */; };
 		3A7CAA38266EDFDE0048E41F /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CAA36266EDFDE0048E41F /* Fonts+Generated.swift */; };
 		3A7CAA39266EDFDE0048E41F /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CAA37266EDFDE0048E41F /* XCAssets+Generated.swift */; };
@@ -42,9 +37,13 @@
 		3A8A1DC126771929003E4B99 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A1DC026771929003E4B99 /* Date+.swift */; };
 		3A8A1DC32677215B003E4B99 /* VideoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A1DC22677215B003E4B99 /* VideoInformation.swift */; };
 		3A8A1DC72677227D003E4B99 /* Worship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A1DC62677227D003E4B99 /* Worship.swift */; };
-		3A8CB984268C2913009EB6EA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CB980268C2913009EB6EA /* UserRepository.swift */; };
-		3A8CB989268C295A009EB6EA /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CB988268C295A009EB6EA /* LocalDataSource.swift */; };
-		3A8CB98B268C2A30009EB6EA /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CB98A268C2A30009EB6EA /* UserDataSource.swift */; };
+		3A92D5E526967BEC00B36C06 /* GoldKeyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5E426967BEC00B36C06 /* GoldKeyRepository.swift */; };
+		3A92D5E726967C4A00B36C06 /* GoldKeyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5E626967C4A00B36C06 /* GoldKeyResponse.swift */; };
+		3A92D5E926967D1A00B36C06 /* GoldKeyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5E826967D1A00B36C06 /* GoldKeyEntity.swift */; };
+		3A92D5EB269681A900B36C06 /* GoldKeyRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5EA269681A900B36C06 /* GoldKeyRepositoryImpl.swift */; };
+		3A92D5ED269681CC00B36C06 /* GoldKeyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5EC269681CC00B36C06 /* GoldKeyDataSource.swift */; };
+		3A92D5EF2696980900B36C06 /* GoldKeyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5EE2696980900B36C06 /* GoldKeyRouter.swift */; };
+		3A92D5F126969A0000B36C06 /* GoldKeyNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92D5F026969A0000B36C06 /* GoldKeyNetworkService.swift */; };
 		3A9CDDB2268DBB5600C302BC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CDDB1268DBB5600C302BC /* MyPageViewController.swift */; };
 		3AAEF37D2672F50C0006E6FE /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A89638A2665FDE20009E9D1 /* swiftgen.yml */; };
 		3AAEF37E2672F5130006E6FE /* confettie_x3_1080_24f.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A53D3AB2665FB4D00A570C1 /* confettie_x3_1080_24f.gif */; };
@@ -59,7 +58,6 @@
 		3AAEF38E2672F5DA0006E6FE /* MainView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF38D2672F5DA0006E6FE /* MainView+Extension.swift */; };
 		3AAEF3902672F7D30006E6FE /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF38F2672F7D30006E6FE /* UserProfileView.swift */; };
 		3AAEF3932672FD210006E6FE /* User+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF3922672FD210006E6FE /* User+.swift */; };
-		3AAEF3952672FD400006E6FE /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF3942672FD400006E6FE /* Gender.swift */; };
 		3AAEF3972672FD7D0006E6FE /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF3962672FD7D0006E6FE /* Emotion.swift */; };
 		3AAEF3992672FE210006E6FE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF3982672FE210006E6FE /* UIView+.swift */; };
 		3AAEF39E267302530006E6FE /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEF39D267302530006E6FE /* UIApplication+.swift */; };
@@ -67,21 +65,33 @@
 		3AAEF3D0267305BC0006E6FE /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAEF3CF267305BB0006E6FE /* VideoCollectionViewCell.xib */; };
 		3AB13960267C2E5F0021BEC9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1395F267C2E5F0021BEC9 /* RoundedButton.swift */; };
 		3AB13962267C2E980021BEC9 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB13961267C2E980021BEC9 /* UITextField+.swift */; };
+		3AB6E64D26954875000866C8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E64C26954875000866C8 /* UserRepository.swift */; };
+		3AB6E65026954C09000866C8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E64F26954C09000866C8 /* Entity.swift */; };
+		3AB6E65226954C3A000866C8 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E65126954C3A000866C8 /* UserEntity.swift */; };
+		3AB6E65526954D6B000866C8 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E65426954D6B000866C8 /* UserMapper.swift */; };
+		3AB6E65826954DAE000866C8 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E65726954DAE000866C8 /* UserRepositoryImpl.swift */; };
+		3AB6E65D26954E0A000866C8 /* RealmStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E65C26954E0A000866C8 /* RealmStorageProtocol.swift */; };
+		3AB6E65F26954E2B000866C8 /* UserLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E65E26954E2B000866C8 /* UserLocalStorage.swift */; };
+		3AB6E66126954E48000866C8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E66026954E48000866C8 /* UserDataSource.swift */; };
+		3AB6E66626954E8C000866C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E66526954E8C000866C8 /* UserResponse.swift */; };
+		3AB6E66826954EB1000866C8 /* StorableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E66726954EB1000866C8 /* StorableUser.swift */; };
+		3AB6E66D26956099000866C8 /* AccessTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E66C26956099000866C8 /* AccessTokenStorage.swift */; };
+		3AB6E66F2695620D000866C8 /* UserNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E66E2695620D000866C8 /* UserNetworkService.swift */; };
+		3AB6E6712695621C000866C8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E6702695621C000866C8 /* NetworkService.swift */; };
+		3AB6E67326956232000866C8 /* APIRouteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67226956232000866C8 /* APIRouteable.swift */; };
+		3AB6E67526956242000866C8 /* AlamofireAPIRouteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67426956242000866C8 /* AlamofireAPIRouteable.swift */; };
+		3AB6E67726956258000866C8 /* UserAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67626956258000866C8 /* UserAPIRouter.swift */; };
+		3AB6E67926957377000866C8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67826957377000866C8 /* UserViewModel.swift */; };
+		3AB6E67B26957BC2000866C8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67A26957BC2000866C8 /* Gender.swift */; };
+		3AB6E67D269582F0000866C8 /* AppBarUIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */; };
+		3AB6E67F269583E3000866C8 /* AppBarNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */; };
 		3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29657266EFDB000A09BB6 /* BaseViewController.swift */; };
 		3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29659266EFDD700A09BB6 /* Constant.swift */; };
 		3AC2966B266F121B00A09BB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966A266F121B00A09BB6 /* MainViewModel.swift */; };
 		3AC2966D266F13C000A09BB6 /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */; };
 		3AC5ED572689433600DB83F1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5ED562689433600DB83F1 /* ViewModelType.swift */; };
-		3AF046CF2671E73600807E40 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046CE2671E73600807E40 /* Teacher.swift */; };
-		3AF046D12671E75300807E40 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D02671E75300807E40 /* Video.swift */; };
-		3AF046D32671E76900807E40 /* ResponseGoldKeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D22671E76900807E40 /* ResponseGoldKeyInfo.swift */; };
-		3AF046D52671E77500807E40 /* ObtainableGoldKeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D42671E77500807E40 /* ObtainableGoldKeyInfo.swift */; };
 		3AF046D92671E81500807E40 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D82671E81500807E40 /* Attendance.swift */; };
 		3AF45235267B1D8600BEBA5F /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */; };
-		3AF4523D267B1E1500BEBA5F /* LocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45238267B1E1500BEBA5F /* LocalDataSourceImpl.swift */; };
-		3AF4523F267B1E1500BEBA5F /* UserDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4523B267B1E1500BEBA5F /* UserDataSourceImpl.swift */; };
-		3AF45245267B1E1E00BEBA5F /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45242267B1E1E00BEBA5F /* UserRepositoryImpl.swift */; };
-		3AF45248267B1E8200BEBA5F /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45247267B1E8200BEBA5F /* UserDefaultsStorage.swift */; };
 		3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */; };
 		3AF4525A267B20FF00BEBA5F /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45259267B20FF00BEBA5F /* Realm+.swift */; };
 		3AF4525C267B213200BEBA5F /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4525B267B213200BEBA5F /* ObservableType+.swift */; };
@@ -109,11 +119,6 @@
 		3A666F67269423730069262B /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A666F69269425DD0069262B /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		3A666F6B26944BFB0069262B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		3A6798082671DD29003A0191 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		3A67980A2671DD47003A0191 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		3A67980C2671DD62003A0191 /* NetworkClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientHelper.swift; sourceTree = "<group>"; };
-		3A67980E2671DD9A003A0191 /* AccessTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenStorage.swift; sourceTree = "<group>"; };
-		3A6798122671DDC3003A0191 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3A7C46DD2682C7BE002AD73C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3A7CAA36266EDFDE0048E41F /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
 		3A7CAA37266EDFDE0048E41F /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
@@ -140,9 +145,13 @@
 		3A8A1DC026771929003E4B99 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3A8A1DC22677215B003E4B99 /* VideoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInformation.swift; sourceTree = "<group>"; };
 		3A8A1DC62677227D003E4B99 /* Worship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worship.swift; sourceTree = "<group>"; };
-		3A8CB980268C2913009EB6EA /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		3A8CB988268C295A009EB6EA /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
-		3A8CB98A268C2A30009EB6EA /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		3A92D5E426967BEC00B36C06 /* GoldKeyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyRepository.swift; sourceTree = "<group>"; };
+		3A92D5E626967C4A00B36C06 /* GoldKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyResponse.swift; sourceTree = "<group>"; };
+		3A92D5E826967D1A00B36C06 /* GoldKeyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyEntity.swift; sourceTree = "<group>"; };
+		3A92D5EA269681A900B36C06 /* GoldKeyRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyRepositoryImpl.swift; sourceTree = "<group>"; };
+		3A92D5EC269681CC00B36C06 /* GoldKeyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyDataSource.swift; sourceTree = "<group>"; };
+		3A92D5EE2696980900B36C06 /* GoldKeyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyRouter.swift; sourceTree = "<group>"; };
+		3A92D5F026969A0000B36C06 /* GoldKeyNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyNetworkService.swift; sourceTree = "<group>"; };
 		3A9CDDB1268DBB5600C302BC /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3AAEF3832672F5680006E6FE /* JalnanOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JalnanOTF.otf; sourceTree = "<group>"; };
 		3AAEF3842672F56A0006E6FE /* SpoqaHanSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansBold.ttf; sourceTree = "<group>"; };
@@ -152,7 +161,6 @@
 		3AAEF38D2672F5DA0006E6FE /* MainView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+Extension.swift"; sourceTree = "<group>"; };
 		3AAEF38F2672F7D30006E6FE /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		3AAEF3922672FD210006E6FE /* User+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+.swift"; sourceTree = "<group>"; };
-		3AAEF3942672FD400006E6FE /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		3AAEF3962672FD7D0006E6FE /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		3AAEF3982672FE210006E6FE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		3AAEF39D267302530006E6FE /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -160,21 +168,33 @@
 		3AAEF3CF267305BB0006E6FE /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		3AB1395F267C2E5F0021BEC9 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		3AB13961267C2E980021BEC9 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		3AB6E64C26954875000866C8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		3AB6E64F26954C09000866C8 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		3AB6E65126954C3A000866C8 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		3AB6E65426954D6B000866C8 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		3AB6E65726954DAE000866C8 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		3AB6E65C26954E0A000866C8 /* RealmStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageProtocol.swift; sourceTree = "<group>"; };
+		3AB6E65E26954E2B000866C8 /* UserLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalStorage.swift; sourceTree = "<group>"; };
+		3AB6E66026954E48000866C8 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		3AB6E66526954E8C000866C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		3AB6E66726954EB1000866C8 /* StorableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableUser.swift; sourceTree = "<group>"; };
+		3AB6E66C26956099000866C8 /* AccessTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenStorage.swift; sourceTree = "<group>"; };
+		3AB6E66E2695620D000866C8 /* UserNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkService.swift; sourceTree = "<group>"; };
+		3AB6E6702695621C000866C8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3AB6E67226956232000866C8 /* APIRouteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouteable.swift; sourceTree = "<group>"; };
+		3AB6E67426956242000866C8 /* AlamofireAPIRouteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIRouteable.swift; sourceTree = "<group>"; };
+		3AB6E67626956258000866C8 /* UserAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRouter.swift; sourceTree = "<group>"; };
+		3AB6E67826957377000866C8 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		3AB6E67A26957BC2000866C8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarUIRouter.swift; sourceTree = "<group>"; };
+		3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarNetworkService.swift; sourceTree = "<group>"; };
 		3AC29657266EFDB000A09BB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AC29659266EFDD700A09BB6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3AC2966A266F121B00A09BB6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		3AC5ED562689433600DB83F1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		3AF046CE2671E73600807E40 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
-		3AF046D02671E75300807E40 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		3AF046D22671E76900807E40 /* ResponseGoldKeyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGoldKeyInfo.swift; sourceTree = "<group>"; };
-		3AF046D42671E77500807E40 /* ObtainableGoldKeyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainableGoldKeyInfo.swift; sourceTree = "<group>"; };
 		3AF046D82671E81500807E40 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
-		3AF45238267B1E1500BEBA5F /* LocalDataSourceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataSourceImpl.swift; sourceTree = "<group>"; };
-		3AF4523B267B1E1500BEBA5F /* UserDataSourceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataSourceImpl.swift; sourceTree = "<group>"; };
-		3AF45242267B1E1E00BEBA5F /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
-		3AF45247267B1E8200BEBA5F /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Swinject.swift"; sourceTree = "<group>"; };
 		3AF45259267B20FF00BEBA5F /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		3AF4525B267B213200BEBA5F /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
@@ -223,6 +243,7 @@
 		3A53D3792665F79E00A570C1 /* holyland.ios */ = {
 			isa = PBXGroup;
 			children = (
+				3AB6E64A269547FC000866C8 /* Domain */,
 				3A6798102671DDB0003A0191 /* Data */,
 				3AC2965D266F097300A09BB6 /* Application */,
 				3AF4525D267B349C00BEBA5F /* Login */,
@@ -251,37 +272,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		3A6798072671DCFC003A0191 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				3A6798082671DD29003A0191 /* NetworkRouter.swift */,
-				3A67980A2671DD47003A0191 /* NetworkClient.swift */,
-				3A67980C2671DD62003A0191 /* NetworkClientHelper.swift */,
-				3A67980E2671DD9A003A0191 /* AccessTokenStorage.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		3A6798102671DDB0003A0191 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3AF45241267B1E1E00BEBA5F /* Repositories */,
-				3AF45237267B1E1500BEBA5F /* Sources */,
-				3A6798112671DDB7003A0191 /* Entities */,
+				3AB6E65326954D5D000866C8 /* Mapper */,
+				3AB6E65626954D8F000866C8 /* Repositories */,
+				3AB6E65926954DE8000866C8 /* DataSources */,
+				3AB6E66326954E78000866C8 /* Models */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		3A6798112671DDB7003A0191 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				3A6798122671DDC3003A0191 /* User.swift */,
-				3AF046CE2671E73600807E40 /* Teacher.swift */,
-				3AF046D02671E75300807E40 /* Video.swift */,
-				3AF046D22671E76900807E40 /* ResponseGoldKeyInfo.swift */,
-				3AF046D42671E77500807E40 /* ObtainableGoldKeyInfo.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		3A7C46DC2682C7AE002AD73C /* Coordinator */ = {
@@ -403,23 +402,6 @@
 			path = ToastViews;
 			sourceTree = "<group>";
 		};
-		3A8CB97E268C2882009EB6EA /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				3A8CB988268C295A009EB6EA /* LocalDataSource.swift */,
-				3A8CB98A268C2A30009EB6EA /* UserDataSource.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		3A8CB97F268C2913009EB6EA /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				3A8CB980268C2913009EB6EA /* UserRepository.swift */,
-			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
 		3AAEF3752672EC4A0006E6FE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +449,121 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
+		3AB6E64A269547FC000866C8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E64B2695485B000866C8 /* Repository */,
+				3AB6E64E26954BF6000866C8 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3AB6E64B2695485B000866C8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E64C26954875000866C8 /* UserRepository.swift */,
+				3A92D5E426967BEC00B36C06 /* GoldKeyRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3AB6E64E26954BF6000866C8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E64F26954C09000866C8 /* Entity.swift */,
+				3AB6E65126954C3A000866C8 /* UserEntity.swift */,
+				3A92D5E826967D1A00B36C06 /* GoldKeyEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3AB6E65326954D5D000866C8 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E65426954D6B000866C8 /* UserMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		3AB6E65626954D8F000866C8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E65726954DAE000866C8 /* UserRepositoryImpl.swift */,
+				3A92D5EA269681A900B36C06 /* GoldKeyRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		3AB6E65926954DE8000866C8 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E65B26954DFC000866C8 /* Local */,
+				3AB6E65A26954DF8000866C8 /* Remote */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		3AB6E65A26954DF8000866C8 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E66026954E48000866C8 /* UserDataSource.swift */,
+				3A92D5EC269681CC00B36C06 /* GoldKeyDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		3AB6E65B26954DFC000866C8 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E65C26954E0A000866C8 /* RealmStorageProtocol.swift */,
+				3AB6E65E26954E2B000866C8 /* UserLocalStorage.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		3AB6E66326954E78000866C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E66526954E8C000866C8 /* UserResponse.swift */,
+				3A92D5E626967C4A00B36C06 /* GoldKeyResponse.swift */,
+				3AB6E66726954EB1000866C8 /* StorableUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3AB6E6692695606E000866C8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E66C26956099000866C8 /* AccessTokenStorage.swift */,
+				3AB6E66B26956089000866C8 /* Client */,
+				3AB6E66A26956084000866C8 /* Router */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3AB6E66A26956084000866C8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E67226956232000866C8 /* APIRouteable.swift */,
+				3AB6E67426956242000866C8 /* AlamofireAPIRouteable.swift */,
+				3AB6E67626956258000866C8 /* UserAPIRouter.swift */,
+				3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */,
+				3A92D5EE2696980900B36C06 /* GoldKeyRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3AB6E66B26956089000866C8 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				3AB6E66E2695620D000866C8 /* UserNetworkService.swift */,
+				3A92D5F026969A0000B36C06 /* GoldKeyNetworkService.swift */,
+				3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */,
+				3AB6E6702695621C000866C8 /* NetworkService.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		3AC29656266EFDA200A09BB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +573,7 @@
 				3AF046D72671E80300807E40 /* Model */,
 				3AC29657266EFDB000A09BB6 /* BaseViewController.swift */,
 				3AF6F9482681BDD900027D8E /* BaseCoordinator.swift */,
+				3AB6E67826957377000866C8 /* UserViewModel.swift */,
 				3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */,
 				3AC5ED562689433600DB83F1 /* ViewModelType.swift */,
 			);
@@ -485,7 +583,7 @@
 		3AC2965D266F097300A09BB6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				3A6798072671DCFC003A0191 /* Network */,
+				3AB6E6692695606E000866C8 /* Network */,
 				3A53D37A2665F79E00A570C1 /* AppDelegate.swift */,
 				3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */,
 				3AF6F9442681BC1800027D8E /* AppCoordinator.swift */,
@@ -528,32 +626,12 @@
 			isa = PBXGroup;
 			children = (
 				3AF046D82671E81500807E40 /* Attendance.swift */,
-				3AAEF3942672FD400006E6FE /* Gender.swift */,
 				3AAEF3962672FD7D0006E6FE /* Emotion.swift */,
 				3A8A1DC22677215B003E4B99 /* VideoInformation.swift */,
 				3A8A1DC62677227D003E4B99 /* Worship.swift */,
+				3AB6E67A26957BC2000866C8 /* Gender.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3AF45237267B1E1500BEBA5F /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				3A8CB97E268C2882009EB6EA /* Protocols */,
-				3AF45238267B1E1500BEBA5F /* LocalDataSourceImpl.swift */,
-				3AF4523B267B1E1500BEBA5F /* UserDataSourceImpl.swift */,
-				3AF45247267B1E8200BEBA5F /* UserDefaultsStorage.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		3AF45241267B1E1E00BEBA5F /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				3A8CB97F268C2913009EB6EA /* Interfaces */,
-				3AF45242267B1E1E00BEBA5F /* UserRepositoryImpl.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		3AF4525D267B349C00BEBA5F /* Login */ = {
@@ -770,77 +848,87 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF45245267B1E1E00BEBA5F /* UserRepositoryImpl.swift in Sources */,
+				3A92D5E926967D1A00B36C06 /* GoldKeyEntity.swift in Sources */,
 				3A666F6C26944BFB0069262B /* MainView.swift in Sources */,
 				3AF45264267B349C00BEBA5F /* LoginViewModel.swift in Sources */,
 				3AF45267267B349C00BEBA5F /* LoginViewController.swift in Sources */,
 				3AF046D92671E81500807E40 /* Attendance.swift in Sources */,
 				3AF4525A267B20FF00BEBA5F /* Realm+.swift in Sources */,
 				3AF6F9472681BCD300027D8E /* LoginCoordinator.swift in Sources */,
+				3AB6E67326956232000866C8 /* APIRouteable.swift in Sources */,
 				3AAEF38E2672F5DA0006E6FE /* MainView+Extension.swift in Sources */,
+				3AB6E67526956242000866C8 /* AlamofireAPIRouteable.swift in Sources */,
 				3AF45235267B1D8600BEBA5F /* UserDefaultHelper.swift in Sources */,
 				3A866D58268F021200778BBF /* MyPageViewModel.swift in Sources */,
+				3A92D5ED269681CC00B36C06 /* GoldKeyDataSource.swift in Sources */,
 				3A866D56268ECDDE00778BBF /* QRPageViewModel.swift in Sources */,
+				3AB6E65826954DAE000866C8 /* UserRepositoryImpl.swift in Sources */,
 				3AF6F9452681BC1800027D8E /* AppCoordinator.swift in Sources */,
+				3AB6E67F269583E3000866C8 /* AppBarNetworkService.swift in Sources */,
 				3AB13960267C2E5F0021BEC9 /* RoundedButton.swift in Sources */,
 				3AF45266267B349C00BEBA5F /* LoginView.swift in Sources */,
 				3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */,
 				3A7C46DE2682C7BE002AD73C /* MainCoordinator.swift in Sources */,
-				3AF45248267B1E8200BEBA5F /* UserDefaultsStorage.swift in Sources */,
-				3AF046D32671E76900807E40 /* ResponseGoldKeyInfo.swift in Sources */,
-				3AAEF3952672FD400006E6FE /* Gender.swift in Sources */,
+				3AB6E66626954E8C000866C8 /* UserResponse.swift in Sources */,
+				3A92D5EB269681A900B36C06 /* GoldKeyRepositoryImpl.swift in Sources */,
 				3AAEF3CE267305B10006E6FE /* VideoCollectionView.swift in Sources */,
 				3A866D4C268EADC700778BBF /* MyPageCoordinator.swift in Sources */,
 				3A7CAA39266EDFDE0048E41F /* XCAssets+Generated.swift in Sources */,
+				3AB6E67B26957BC2000866C8 /* Gender.swift in Sources */,
 				3A7CAA38266EDFDE0048E41F /* Fonts+Generated.swift in Sources */,
-				3AF046CF2671E73600807E40 /* Teacher.swift in Sources */,
-				3AF046D52671E77500807E40 /* ObtainableGoldKeyInfo.swift in Sources */,
 				3A8A1DC32677215B003E4B99 /* VideoInformation.swift in Sources */,
+				3AB6E65026954C09000866C8 /* Entity.swift in Sources */,
 				3A53D37F2665F79E00A570C1 /* MainViewController.swift in Sources */,
+				3AB6E6712695621C000866C8 /* NetworkService.swift in Sources */,
 				3AB13962267C2E980021BEC9 /* UITextField+.swift in Sources */,
-				3AF046D12671E75300807E40 /* Video.swift in Sources */,
 				3A666F68269423730069262B /* VideoCollectionViewCell.swift in Sources */,
 				3A8A1DBF267710F3003E4B99 /* FullScreenToastView.swift in Sources */,
 				3A866D54268EB5EA00778BBF /* QRPageViewController.swift in Sources */,
 				3A53D37B2665F79E00A570C1 /* AppDelegate.swift in Sources */,
+				3AB6E66826954EB1000866C8 /* StorableUser.swift in Sources */,
 				3AF4525C267B213200BEBA5F /* ObservableType+.swift in Sources */,
 				3AAEF3902672F7D30006E6FE /* UserProfileView.swift in Sources */,
+				3AB6E65F26954E2B000866C8 /* UserLocalStorage.swift in Sources */,
 				3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */,
+				3AB6E66D26956099000866C8 /* AccessTokenStorage.swift in Sources */,
 				3AC2966D266F13C000A09BB6 /* ViewModelBindableType.swift in Sources */,
-				3A67980B2671DD47003A0191 /* NetworkClient.swift in Sources */,
+				3AB6E67726956258000866C8 /* UserAPIRouter.swift in Sources */,
 				3A9CDDB2268DBB5600C302BC /* MyPageViewController.swift in Sources */,
-				3A8CB989268C295A009EB6EA /* LocalDataSource.swift in Sources */,
 				3A8A1DBB26770816003E4B99 /* ToastView.swift in Sources */,
-				3A67980D2671DD62003A0191 /* NetworkClientHelper.swift in Sources */,
-				3A6798132671DDC3003A0191 /* User.swift in Sources */,
+				3AB6E66126954E48000866C8 /* UserDataSource.swift in Sources */,
+				3AB6E65D26954E0A000866C8 /* RealmStorageProtocol.swift in Sources */,
+				3A92D5EF2696980900B36C06 /* GoldKeyRouter.swift in Sources */,
 				3A8A1DC126771929003E4B99 /* Date+.swift in Sources */,
+				3AB6E64D26954875000866C8 /* UserRepository.swift in Sources */,
 				3A8A1DC72677227D003E4B99 /* Worship.swift in Sources */,
 				3AAEF39E267302530006E6FE /* UIApplication+.swift in Sources */,
-				3A67980F2671DD9A003A0191 /* AccessTokenStorage.swift in Sources */,
+				3AB6E66F2695620D000866C8 /* UserNetworkService.swift in Sources */,
 				3AAEF3992672FE210006E6FE /* UIView+.swift in Sources */,
 				3AC5ED572689433600DB83F1 /* ViewModelType.swift in Sources */,
 				3AC2966B266F121B00A09BB6 /* MainViewModel.swift in Sources */,
+				3AB6E67926957377000866C8 /* UserViewModel.swift in Sources */,
+				3AB6E67D269582F0000866C8 /* AppBarUIRouter.swift in Sources */,
 				3A8A1DA52676E1EA003E4B99 /* NetworkStatus.swift in Sources */,
 				3A666F6A269425DD0069262B /* VideoListViewModel.swift in Sources */,
-				3AF4523D267B1E1500BEBA5F /* LocalDataSourceImpl.swift in Sources */,
+				3A92D5E726967C4A00B36C06 /* GoldKeyResponse.swift in Sources */,
 				3AAEF3932672FD210006E6FE /* User+.swift in Sources */,
-				3A8CB984268C2913009EB6EA /* UserRepository.swift in Sources */,
-				3A6798092671DD29003A0191 /* NetworkRouter.swift in Sources */,
+				3A92D5F126969A0000B36C06 /* GoldKeyNetworkService.swift in Sources */,
 				3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */,
 				3A8A1DB62676FA83003E4B99 /* TitleMessageAlertView.swift in Sources */,
 				3A8A1DAC2676F2E6003E4B99 /* ForgetAlertView.swift in Sources */,
 				3A8A1DB82676FAAF003E4B99 /* ChildQRCodeAlertView.swift in Sources */,
 				3AF45265267B349C00BEBA5F /* LoginView+Extension.swift in Sources */,
+				3AB6E65526954D6B000866C8 /* UserMapper.swift in Sources */,
 				3AAEF3972672FD7D0006E6FE /* Emotion.swift in Sources */,
 				3A8A1DAE2676F59C003E4B99 /* OkayCancelAlertView.swift in Sources */,
 				3A8A1DBD267710CE003E4B99 /* UserLevelUpToastView.swift in Sources */,
-				3A8CB98B268C2A30009EB6EA /* UserDataSource.swift in Sources */,
 				3A8A1DB02676F5FE003E4B99 /* OneTitleAlertView.swift in Sources */,
 				3A8A1DA82676E5FE003E4B99 /* AlertType.swift in Sources */,
 				3AF6F9492681BDD900027D8E /* BaseCoordinator.swift in Sources */,
-				3AF4523F267B1E1500BEBA5F /* UserDataSourceImpl.swift in Sources */,
 				3A8A1DB22676F66A003E4B99 /* VideoAttendanceAlertView.swift in Sources */,
 				3A866D52268EB5A300778BBF /* QRPageCoordinator.swift in Sources */,
+				3A92D5E526967BEC00B36C06 /* GoldKeyRepository.swift in Sources */,
+				3AB6E65226954C3A000866C8 /* UserEntity.swift in Sources */,
 				3A8A1DAA2676E77A003E4B99 /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

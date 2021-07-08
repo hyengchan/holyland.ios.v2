@@ -2,7 +2,7 @@
 //  AccessTokenStorage.swift
 //  holyland.ios
 //
-//  Created by 윤형찬 on 2021/06/10.
+//  Created by 윤형찬 on 2021/07/07.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ protocol AccessTokenStorage: class {
 
 final class RemoteAccessTokenStorage: AccessTokenStorage {
     let accessToken: Token
-    
+
     init(token: Token) {
         accessToken = token
     }
@@ -30,7 +30,8 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
     }
 
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        guard urlRequest.url?.absoluteString.hasPrefix(NetworkRouter.urlPath) == true else {
+        // TODO :- APIRouteable.serverURLPath 사용할 수 있게
+        guard urlRequest.url?.absoluteString.hasPrefix(Constants.AppURL.baseURL) == true else {
             // If the request does not require authentication, we can directly return it as unmodified.
             return completion(.success(urlRequest))
         }

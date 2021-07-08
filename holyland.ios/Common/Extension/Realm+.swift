@@ -8,6 +8,12 @@
 import RealmSwift
 import Realm
 
+extension Results {
+    func toArray<T>(type: T.Type) -> [T] {
+        return compactMap { $0 as? T }
+    }
+}
+
 protocol CascadeDeleting {
     func delete<S: Sequence>(_ objects: S, cascading: Bool) where S.Iterator.Element: Object
     func delete<Entity: Object>(_ entity: Entity, cascading: Bool)
