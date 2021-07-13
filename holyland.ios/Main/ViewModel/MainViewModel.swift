@@ -22,10 +22,11 @@ class MainViewModel: ViewModelType {
     private let qrPageSubject = PublishSubject<Void>()
     private let profileSubject = PublishSubject<Void>()
 
+    private let willEnterForegroundSubject = PublishSubject<Void>()
+
     // MARK: Input properties
 
     // MARK: Output properties
-    private let userRepository: UserRepository
     private let goldKeyRepository: GoldKeyRepository
 
     struct Input {
@@ -34,28 +35,19 @@ class MainViewModel: ViewModelType {
         let profileTap: PublishSubject<Void>
     }
 
-    struct Output {
-        let user: BehaviorRelay<User?>
-        let goldkey: BehaviorRelay<Int>
-        let holylevel: BehaviorRelay<Int>
-        let obtainableGoldKeys: BehaviorRelay<GoldKeyResponse?>
-    }
+    struct Output { let willEnterForeground: Driver<Void> }
 
     let input: Input
     let output: Output
     
-    init(userRepository: UserRepository, goldKeyRepository: GoldKeyRepository, container: Container) {
-        self.userRepository = userRepository
+    init(goldKeyRepository: GoldKeyRepository, container: Container) {
         self.goldKeyRepository = goldKeyRepository
         self.container = container
         
         input = Input(myPageTap: myPageSubject,
                       qrPageTap: qrPageSubject,
                       profileTap: profileSubject)
-        output = Output(user: self.userRepository.user,
-                        goldkey: self.goldKeyRepository.goldkey,
-                        holylevel: self.goldKeyRepository.holyLevel,
-                        obtainableGoldKeys: self.goldKeyRepository.obtainableGoldKeys)
+        output = Output(willEnterForeground: willEnterForegroundSubject.asDriverOnErrorJustComplete())
     }
 
     func didTapMyPage() -> CocoaAction {

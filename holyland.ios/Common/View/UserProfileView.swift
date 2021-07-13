@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxGesture
+import RxCocoa
 
 class UserProfileView: UIView {
     
@@ -20,6 +23,9 @@ class UserProfileView: UIView {
     private var classNameLabel: UILabel!
     private var photoImageView: UIImageView!
     private var emotionImageView: UIImageView!
+    private let disposeBag = DisposeBag()
+
+    let imageViewTapped = PublishSubject<Void>()
     
     init(frame: CGRect = .zero,
          backgroundColor: UIColor = Asset.Color.lemon.color,
@@ -76,6 +82,15 @@ class UserProfileView: UIView {
         createViews()
         addSubViews()
         addConstraints()
+
+        self.photoImageView.rx.tapGesture()
+            .when(.recognized)
+            .withUnretained(self)
+            .subscribe(onNext: { (owner, _) in
+                print("tapped")
+                owner.imageViewTapped.onNext(())
+            })
+            .disposed(by: disposeBag)
     }
     
     private func createViews() {
@@ -148,9 +163,9 @@ class UserProfileView: UIView {
         classNameLabel.text = className
     }
 
-    func addTapGestureToPhotoImageView(_ recognizer: UITapGestureRecognizer) {
-        self.isUserInteractionEnabled = true
-        photoImageView.isUserInteractionEnabled = true
-        photoImageView.addGestureRecognizer(recognizer)
-    }
+//    func addTapGestureToPhotoImageView(_ recognizer: UITapGestureRecognizer) {
+//        self.isUserInteractionEnabled = true
+//        photoImageView.isUserInteractionEnabled = true
+//        photoImageView.addGestureRecognizer(recognizer)
+//    }
 }

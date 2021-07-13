@@ -25,7 +25,7 @@ class MainView: UIView {
     lazy var goldKeyCountingLabel = createGoldKeyCountingLabel()
     lazy var grayLineView = createGrayLine()
 
-    lazy var videoCollectionView = createVideoCollectionView()
+    lazy var videoCollectionView = VideoCollectionView()
 
     var myGoldKeyInfoViewHeightConstraint: Constraint!
     var profileViewConstraint: Constraint!
@@ -48,13 +48,10 @@ class MainView: UIView {
         addSubview(goldKeyContainerView)
         goldKeyContainerView.addSubview(goldKeyTitleLabel)
         goldKeyContainerView.addSubview(goldKeyMessageLabel)
-        goldKeyContainerView.addSubview(goldKeyProgressBar)
-        goldKeyContainerView.addSubview(goldKeyImgView)
-        goldKeyProgressBar.addSubview(goldKeyCountingLabel)
-        goldKeyContainerView.addSubview(grayLineView)
         addSubview(myPageButton)
         addSubview(qrPageButton)
         
         addViewConstraints()
+        addAllViewsToGoldKeyContainerView()
     }
 }

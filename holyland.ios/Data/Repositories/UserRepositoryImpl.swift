@@ -8,16 +8,15 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Swinject
 
 final class UserRepositoryImpl: UserRepository {
+
     private let userRemoteDataSource: UserRemoteDataSource
     private let userLocalDataSource: UserLocalDataSouce
 
-    private(set) var user = BehaviorRelay<User?>(value: nil)
-
     init(userDataSource: UserRemoteDataSource,
          localDataSource: UserLocalDataSouce) {
+
         self.userRemoteDataSource = userDataSource
         self.userLocalDataSource = localDataSource
     }
@@ -29,29 +28,7 @@ final class UserRepositoryImpl: UserRepository {
     }
 
     func userInfo(idx: Int) -> Observable<Result<User, Error>> {
-        let result = userRemoteDataSource.userInfo(idx: String(idx)).asObservable()
-        result
-            .addSchedulers()
-            .compactMap { $0 }
-            .do(onNext: { response in
-                switch response {
-                case .success(let user):
-                    self.user.accept(user)
-                case .failure(let error):
-                    print(error)
-                }
-            })
-        return result
-//            .addSchedulers()
-//            .compactMap { $0 }
-//            .do(onNext: { response in
-//                switch response {
-//                case .success(let user):
-//                    self.user.onNext(user)
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            })
+        userRemoteDataSource.userInfo(idx: String(idx)).asObservable()
     }
 
     @discardableResult

@@ -11,10 +11,6 @@ import RxCocoa
 
 final class GoldKeyRepositoryImpl: GoldKeyRepository {
 
-    var goldkey = BehaviorRelay<Int>(value: 0)
-    var holyLevel = BehaviorRelay<Int>(value: 0)
-    var obtainableGoldKeys = BehaviorRelay<GoldKeyResponse?>(value: nil)
-
     private let goldKeyDataSource: GoldKeyDataSource
 
     init(goldKeyDataSource: GoldKeyDataSource) {
@@ -22,26 +18,18 @@ final class GoldKeyRepositoryImpl: GoldKeyRepository {
     }
 
     func checkObtainableGoldKey(idx: Int) -> Observable<GoldKeyResponse?> {
-        return self.goldKeyDataSource.checkObtainableGoldKeys(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.obtainableGoldKeys.accept(info)
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+        goldKeyDataSource.checkObtainableGoldKeys(idx: idx)
     }
 
     func requestWeekDayOnGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestWeekDayOnGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestWeekDayOnGoldkeyCreationOfWithOtherUser(idx: Int) -> Observable<GoldKeyInfoResponse?> {
@@ -55,13 +43,13 @@ final class GoldKeyRepositoryImpl: GoldKeyRepository {
 
     func requestWeekNightOnGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestWeekNightOnGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestWeekNightOnGoldkeyCreationOfWithOtherUser(idx: Int) -> Observable<GoldKeyInfoResponse?> {
@@ -75,89 +63,89 @@ final class GoldKeyRepositoryImpl: GoldKeyRepository {
 
     func requestLiveViewGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         return self.goldKeyDataSource.requestLiveViewGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestEarlyLoveGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestEarlyLoveGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestFirePillarGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestFirePillarGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestMorningTreatGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestMorningTreatGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestRouletteSmallGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestRouletteSmallGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestRouletteLargeGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestRouletteLargeGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestBoxCrashSmallGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestBoxCrashSmallGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 
     func requestBoxCrashLargeGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
         self.goldKeyDataSource.requestBoxCrashLargeGoldkeyCreation(idx: idx)
-            .map { [weak self] in
-                if let info = $0 {
-                    self?.goldkey.accept(info.total)
-                    self?.holyLevel.accept(info.holyLevel)
-                }
-                return $0
-            }
+//            .map { [weak self] in
+//                if let info = $0 {
+//                    self?.goldkey.accept(info.total)
+//                    self?.holyLevel.accept(info.holyLevel)
+//                }
+//                return $0
+//            }
     }
 }

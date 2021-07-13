@@ -31,6 +31,6 @@ final class UserNetworkService: NetworkService {
 
     class func userInfo(idx: String) -> Single<Result<UserResponse, Error>> {
         let router = UserAPIRouter.user(idx: idx)
-        return NetworkService.get(router)
+        return NetworkService.get(router) 
     }
 }

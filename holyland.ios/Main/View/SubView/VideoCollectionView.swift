@@ -19,11 +19,11 @@ class VideoCollectionView: UIView {
 
     var collectionView: UICollectionView!
 
-    private var viewModel: VideoListViewModel!
+//    private var viewModel: VideoListViewModel!
 
     init(frame: CGRect, viewModel: VideoListViewModel) {
         super.init(frame: frame)
-        self.viewModel = viewModel
+//        self.viewModel = viewModel
         commonInit()
     }
 
@@ -48,19 +48,6 @@ class VideoCollectionView: UIView {
     func bindViews() {
         collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
-
-        viewModel.output.videoInfomations
-            .drive(collectionView.rx.items(cellIdentifier: VideoCollectionViewCell.identifier,
-                                           cellType: VideoCollectionViewCell.self)) { (_, element, cell) in
-             cell.configure(with: element)
-            }
-            .disposed(by: disposeBag)
-
-        collectionView.rx
-            .modelSelected(VideoInformation.self)
-            .bind(to: viewModel.input.didTapVideo)
-            .disposed(by: disposeBag)
-
     }
 
     // MARK: - UI components

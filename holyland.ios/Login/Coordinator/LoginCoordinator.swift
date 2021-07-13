@@ -23,14 +23,14 @@ class LoginCoordinator: BaseCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         let vc = container.resolve(LoginViewController.self)!
-        navigationController.viewControllers = [vc]
 
         vc.viewModel.output.resultSubject
-            .flatMap { [unowned self] _ in
-                coordinate(to: MainCoordinator(container: container, navigationController: navigationController))
-            }
-            .subscribe()
+            .drive(with: self, onNext: { owner, _ in
+                owner.coordinate(to: MainCoordinator(container: owner.container, navigationController: owner.navigationController))
+            })
             .disposed(by: rx.disposeBag)
+
+        navigationController.viewControllers = [vc]
         
         return Observable.never()
     }

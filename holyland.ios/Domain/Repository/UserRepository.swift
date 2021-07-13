@@ -8,7 +8,6 @@ import RxSwift
 import RxRelay
 
 protocol UserRepository {
-    var user: BehaviorRelay<User?> { get }
     func siginIn(credentials: Credentials) -> Observable<Result<Int, Error>>
     func userInfo(idx: Int) -> Observable<Result<User, Error>>
     @discardableResult

@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 protocol GoldKeyRepository {
-    var goldkey: BehaviorRelay<Int> { get }
-    var holyLevel: BehaviorRelay<Int> { get }
-    var obtainableGoldKeys: BehaviorRelay<GoldKeyResponse?> { get }
+//    var goldkey: BehaviorRelay<Int> { get }
+//    var holyLevel: BehaviorRelay<Int> { get }
+//    var obtainableGoldKeys: BehaviorRelay<GoldKeyResponse?> { get }
 
     func checkObtainableGoldKey(idx: Int) -> Observable<GoldKeyResponse?>
     func requestWeekDayOnGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?>

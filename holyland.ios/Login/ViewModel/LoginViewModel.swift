@@ -31,7 +31,7 @@ class LoginViewModel {
     private let didTapLoginButton = PublishSubject<Credentials>()
 
     // MARK: output properties
-    private let signInResultSubject = PublishSubject<Void>()
+    private let signInResultSubject = PublishSubject<UserId>()
     private let invalidLoginErrorsSubject = PublishSubject<Error>()
     private let serverConnectionErrorsSubject = PublishSubject<Error>()
 
@@ -68,7 +68,7 @@ class LoginViewModel {
 
         output = Output(enableSignInButton: isConfirmEnabled,
                         credential: credentialsObservable,
-                        resultSubject: signInResultSubject,
+                        resultSubject: signInResultSubject.asDriverOnErrorJustComplete(),
                         serverErrorObservable: serverConnectionErrorsSubject.asDriverOnErrorJustComplete(),
                         loginErrorsObservable: invalidLoginErrorsSubject.asDriverOnErrorJustComplete())
 
@@ -76,10 +76,9 @@ class LoginViewModel {
             .subscribe(onNext: { [unowned self] response in
                 switch response {
                 case .success(let idx):
-                    userRepository.userInfo(idx: idx)
                     UserPersistentStorage.loggedInIdx = idx
+                    self.signInResultSubject.onNext(idx)
 
-                    self.signInResultSubject.onNext(())
                 case .failure(let error):
                     if error is NetworkError, error as? NetworkError == NetworkError.endpointError {
                         self.serverConnectionErrorsSubject.onNext(error)
@@ -102,7 +101,7 @@ extension LoginViewModel: ViewModelType {
     struct Output {
         let enableSignInButton: Driver<Bool>
         let credential: Observable<Credentials>
-        let resultSubject: PublishSubject<Void>
+        let resultSubject: Driver<UserId>
         let serverErrorObservable: Driver<Error>
         let loginErrorsObservable: Driver<Error>
     }

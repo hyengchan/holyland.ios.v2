@@ -39,7 +39,10 @@ class MainCoordinator: BaseCoordinator<Void> {
             .disposed(by: rx.disposeBag)
 
         vc.viewModel.input.profileTap
-            .subscribe( { _ in print("ButtonTapped") })
+            .flatMap { [unowned self] in
+                coordinate(to: MyProfileCoordinator(container: container, navigationController: navigationController))
+            }
+            .subscribe()
             .disposed(by: rx.disposeBag)
 
         return Observable.never()

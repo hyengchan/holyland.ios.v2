@@ -41,14 +41,20 @@ extension AppDelegate {
             UserRepositoryImpl(userDataSource: resolver.resolve(UserRemoteDataSource.self)!,
                                localDataSource: resolver.resolve(UserLocalDataSouce.self)!)
         }
+        .inObjectScope(ObjectScope.container)
 
         container.register(GoldKeyRepository.self) { resolver in
             GoldKeyRepositoryImpl(goldKeyDataSource: resolver.resolve(GoldKeyDataSource.self)!)
         }
         
         // MARK: - ViewModels
-        container.register(UserViewModel.self) { _ in
-            UserViewModel()
+        container.register(UserViewModel.self) { resolver in
+            UserViewModel(userRepository: resolver.resolve(UserRepository.self)!)
+        }
+        .inObjectScope(ObjectScope.container)
+
+        container.register(GoldKeyViewModel.self) { resolver in
+            GoldKeyViewModel(goldkeyRepository: resolver.resolve(GoldKeyRepository.self)!)
         }
         .inObjectScope(ObjectScope.container)
 
@@ -59,8 +65,7 @@ extension AppDelegate {
         .inObjectScope(ObjectScope.container)
         
         container.register(MainViewModel.self) { resolver in
-            MainViewModel(userRepository: resolver.resolve(UserRepository.self)!,
-                          goldKeyRepository: resolver.resolve(GoldKeyRepository.self)!,
+            MainViewModel(goldKeyRepository: resolver.resolve(GoldKeyRepository.self)!,
                           container: self.container)
         }
         .inObjectScope(ObjectScope.container)
@@ -71,6 +76,11 @@ extension AppDelegate {
 
         container.register(QRPageViewModel.self) { _ in
             QRPageViewModel(container: self.container)
+        }
+        .inObjectScope(ObjectScope.container)
+
+        container.register(MyProfileViewModel.self) { _ in
+            MyProfileViewModel(container: self.container)
         }
         .inObjectScope(ObjectScope.container)
 
@@ -89,6 +99,8 @@ extension AppDelegate {
         container.register(MainViewController.self) { resolver in
             let viewController = MainViewController()
             viewController.viewModel = resolver.resolve(MainViewModel.self)
+            viewController.userViewModel = resolver.resolve(UserViewModel.self)
+            viewController.goldkeyViewModel = resolver.resolve(GoldKeyViewModel.self)
             viewController.videoListViewModel = resolver.resolve(VideoListViewModel.self)
             return viewController
         }
@@ -102,6 +114,12 @@ extension AppDelegate {
         container.register(QRPageViewController.self) { resolver in
             let viewController = QRPageViewController()
             viewController.viewModel = resolver.resolve(QRPageViewModel.self)
+            return viewController
+        }
+
+        container.register(MyProfileViewController.self) { resolver in
+            let viewController = MyProfileViewController()
+            viewController.viewModel = resolver.resolve(MyProfileViewModel.self)
             return viewController
         }
     }

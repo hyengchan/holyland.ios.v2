@@ -66,15 +66,6 @@ extension MainView {
         return view
     }
 
-    func createVideoCollectionView() -> UICollectionView {
-        let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
-        let cell = UINib(nibName: VideoCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(cell, forCellWithReuseIdentifier: VideoCollectionViewCell.identifier)
-        return collectionView
-    }
-
     func addViewConstraints() {
         myPageButton.snp.makeConstraints {
             $0.size.equalTo(64)
@@ -124,6 +115,15 @@ extension MainView {
             $0.leading.equalToSuperview()
         }
 
+        self.layoutIfNeeded()
+    }
+
+    func addAllViewsToGoldKeyContainerView() {
+        goldKeyContainerView.addSubview(goldKeyProgressBar)
+        goldKeyContainerView.addSubview(goldKeyImgView)
+        goldKeyProgressBar.addSubview(goldKeyCountingLabel)
+        goldKeyContainerView.addSubview(grayLineView)
+
         grayLineView.snp.makeConstraints {
             $0.bottom.equalTo(videoCollectionView.snp.top).offset(-8)
             $0.leading.trailing.equalToSuperview()
@@ -159,8 +159,6 @@ extension MainView {
             $0.bottom.equalTo(goldKeyImgView.snp.top).offset(-8)
             $0.leading.equalToSuperview()
         }
-
-        self.layoutIfNeeded()
     }
 }
 

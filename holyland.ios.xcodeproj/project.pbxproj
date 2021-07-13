@@ -11,6 +11,7 @@
 		3A42C8F726817BFC0075AAEE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A42C8F626817BFC0075AAEE /* .swiftlint.yml */; };
 		3A53D37B2665F79E00A570C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53D37A2665F79E00A570C1 /* AppDelegate.swift */; };
 		3A53D37F2665F79E00A570C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53D37E2665F79E00A570C1 /* MainViewController.swift */; };
+		3A60766526981FBC00435C86 /* GoldKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60766426981FBC00435C86 /* GoldKeyViewModel.swift */; };
 		3A666F68269423730069262B /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F67269423730069262B /* VideoCollectionViewCell.swift */; };
 		3A666F6A269425DD0069262B /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F69269425DD0069262B /* VideoListViewModel.swift */; };
 		3A666F6C26944BFB0069262B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A666F6B26944BFB0069262B /* MainView.swift */; };
@@ -88,8 +89,10 @@
 		3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29657266EFDB000A09BB6 /* BaseViewController.swift */; };
 		3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29659266EFDD700A09BB6 /* Constant.swift */; };
 		3AC2966B266F121B00A09BB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966A266F121B00A09BB6 /* MainViewModel.swift */; };
-		3AC2966D266F13C000A09BB6 /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */; };
 		3AC5ED572689433600DB83F1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5ED562689433600DB83F1 /* ViewModelType.swift */; };
+		3AC7507F269D2FC7002D2802 /* MyProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7507E269D2FC7002D2802 /* MyProfileCoordinator.swift */; };
+		3AC75082269D2FF9002D2802 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC75081269D2FF9002D2802 /* MyProfileViewModel.swift */; };
+		3AC75085269D3010002D2802 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC75084269D3010002D2802 /* MyProfileViewController.swift */; };
 		3AF046D92671E81500807E40 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D82671E81500807E40 /* Attendance.swift */; };
 		3AF45235267B1D8600BEBA5F /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */; };
 		3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */; };
@@ -116,6 +119,7 @@
 		3A53D3AC2665FB4D00A570C1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		3A53D3AD2665FB4D00A570C1 /* amen_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = amen_sound.mp3; sourceTree = "<group>"; };
 		3A53D3AE2665FB4D00A570C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A60766426981FBC00435C86 /* GoldKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyViewModel.swift; sourceTree = "<group>"; };
 		3A666F67269423730069262B /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A666F69269425DD0069262B /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		3A666F6B26944BFB0069262B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -191,8 +195,10 @@
 		3AC29657266EFDB000A09BB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AC29659266EFDD700A09BB6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3AC2966A266F121B00A09BB6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		3AC5ED562689433600DB83F1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		3AC7507E269D2FC7002D2802 /* MyProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCoordinator.swift; sourceTree = "<group>"; };
+		3AC75081269D2FF9002D2802 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		3AC75084269D3010002D2802 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		3AF046D82671E81500807E40 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Swinject.swift"; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 				3AC2965D266F097300A09BB6 /* Application */,
 				3AF4525D267B349C00BEBA5F /* Login */,
 				3AC29667266F11E600A09BB6 /* Main */,
+				3AC7507C269D2439002D2802 /* MyProfile */,
 				3A866D46268EAD6800778BBF /* MyPage */,
 				3A866D4D268EB57D00778BBF /* QRPage */,
 				3AC29656266EFDA200A09BB6 /* Common */,
@@ -270,6 +277,16 @@
 				3A53D3AB2665FB4D00A570C1 /* confettie_x3_1080_24f.gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A60766326981FA400435C86 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5ED562689433600DB83F1 /* ViewModelType.swift */,
+				3AB6E67826957377000866C8 /* UserViewModel.swift */,
+				3A60766426981FBC00435C86 /* GoldKeyViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3A6798102671DDB0003A0191 /* Data */ = {
@@ -567,15 +584,13 @@
 		3AC29656266EFDA200A09BB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A60766326981FA400435C86 /* ViewModel */,
 				3A8A1DA32676E1CF003E4B99 /* Helper */,
 				3AAEF3912672FD140006E6FE /* Extension */,
 				3AAEF3752672EC4A0006E6FE /* View */,
 				3AF046D72671E80300807E40 /* Model */,
 				3AC29657266EFDB000A09BB6 /* BaseViewController.swift */,
 				3AF6F9482681BDD900027D8E /* BaseCoordinator.swift */,
-				3AB6E67826957377000866C8 /* UserViewModel.swift */,
-				3AC2966C266F13C000A09BB6 /* ViewModelBindableType.swift */,
-				3AC5ED562689433600DB83F1 /* ViewModelType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -620,6 +635,40 @@
 				3A666F69269425DD0069262B /* VideoListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AC7507C269D2439002D2802 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7507D269D279E002D2802 /* Coordinator */,
+				3AC75080269D2FE5002D2802 /* ViewModel */,
+				3AC75083269D2FFD002D2802 /* View */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		3AC7507D269D279E002D2802 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7507E269D2FC7002D2802 /* MyProfileCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3AC75080269D2FE5002D2802 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3AC75081269D2FF9002D2802 /* MyProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AC75083269D2FFD002D2802 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AC75084269D3010002D2802 /* MyProfileViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3AF046D72671E80300807E40 /* Model */ = {
@@ -870,6 +919,7 @@
 				3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */,
 				3A7C46DE2682C7BE002AD73C /* MainCoordinator.swift in Sources */,
 				3AB6E66626954E8C000866C8 /* UserResponse.swift in Sources */,
+				3AC75082269D2FF9002D2802 /* MyProfileViewModel.swift in Sources */,
 				3A92D5EB269681A900B36C06 /* GoldKeyRepositoryImpl.swift in Sources */,
 				3AAEF3CE267305B10006E6FE /* VideoCollectionView.swift in Sources */,
 				3A866D4C268EADC700778BBF /* MyPageCoordinator.swift in Sources */,
@@ -891,7 +941,6 @@
 				3AB6E65F26954E2B000866C8 /* UserLocalStorage.swift in Sources */,
 				3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */,
 				3AB6E66D26956099000866C8 /* AccessTokenStorage.swift in Sources */,
-				3AC2966D266F13C000A09BB6 /* ViewModelBindableType.swift in Sources */,
 				3AB6E67726956258000866C8 /* UserAPIRouter.swift in Sources */,
 				3A9CDDB2268DBB5600C302BC /* MyPageViewController.swift in Sources */,
 				3A8A1DBB26770816003E4B99 /* ToastView.swift in Sources */,
@@ -913,8 +962,11 @@
 				3A92D5E726967C4A00B36C06 /* GoldKeyResponse.swift in Sources */,
 				3AAEF3932672FD210006E6FE /* User+.swift in Sources */,
 				3A92D5F126969A0000B36C06 /* GoldKeyNetworkService.swift in Sources */,
+				3AC75085269D3010002D2802 /* MyProfileViewController.swift in Sources */,
+				3A60766526981FBC00435C86 /* GoldKeyViewModel.swift in Sources */,
 				3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */,
 				3A8A1DB62676FA83003E4B99 /* TitleMessageAlertView.swift in Sources */,
+				3AC7507F269D2FC7002D2802 /* MyProfileCoordinator.swift in Sources */,
 				3A8A1DAC2676F2E6003E4B99 /* ForgetAlertView.swift in Sources */,
 				3A8A1DB82676FAAF003E4B99 /* ChildQRCodeAlertView.swift in Sources */,
 				3AF45265267B349C00BEBA5F /* LoginView+Extension.swift in Sources */,

@@ -9,15 +9,6 @@ import RxSwift
 import RxCocoa
 
 class VideoListViewModel: ViewModelType {
-    struct Input {
-        let didTapVideo: AnyObserver<VideoInformation>
-        let videoInfomations: AnyObserver<[VideoInformation]>
-    }
-
-    struct Output {
-        let videoInfomations: Driver<[VideoInformation]>
-        let selectionVideo: Driver<VideoInformation.VideoKind>
-    }
 
     let input: Input
     let output: Output
@@ -38,7 +29,20 @@ class VideoListViewModel: ViewModelType {
             .map { (videoInformation) -> VideoInformation.VideoKind in
                 videoInformation.kind
             }
+            .do { print($0) }
             .bind(to: selectionVideoSubject)
             .disposed(by: disposeBag)
+    }
+}
+
+extension VideoListViewModel {
+    struct Input {
+        let didTapVideo: AnyObserver<VideoInformation>
+        let videoInfomations: AnyObserver<[VideoInformation]>
+    }
+
+    struct Output {
+        let videoInfomations: Driver<[VideoInformation]>
+        let selectionVideo: Driver<VideoInformation.VideoKind>
     }
 }
