@@ -16,19 +16,22 @@ import NSObject_Rx
 
 class MainViewController: BaseViewController {
     
-    // Properties
+    // MARK: - Properties
     private var lastGoldkey = 0
     private var lastHolyLevel = 0
-    
+
+    // MARK: ViewModels
     var viewModel: MainViewModel!
     var userViewModel: UserViewModel!
     var goldkeyViewModel: GoldKeyViewModel!
     var videoListViewModel: VideoListViewModel!
 
+    // MARK: Figures
     lazy var mainView = MainView(frame: self.view.frame)
     
     lazy var viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).mapToVoid().asObservable()
     lazy var viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:))).mapToVoid().asObservable()
+
     lazy var userObservable = userViewModel.loginUser.compactMap { $0 }
     lazy var goldKeyObservable = goldkeyViewModel.obtainableGoldKeys.compactMap { $0 }
 
@@ -36,15 +39,20 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         // swipe gesture 뒤로가기 금지
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        mainView.goldKeyProgressBar.makeRounded(radius: mainView.goldKeyProgressBar.bounds.height / 2)
 
         setupViews()
-        bindUserViewModel()
-        bindMainViewModel()
+        binding()
     }
-    
-    func bindUserViewModel() {
 
+    // MARK: - Binding
+    func binding() {
+        bindUser()
+        bindMainViewModel()
+        bindVideoCollectionView()
+    }
+
+    // MARK: User Info Binding
+    func bindUser() {
         let willEnterForeground = viewModel.output.willEnterForeground.asObservable()
 
         Observable.just(UserPersistentStorage.loggedInIdx)
@@ -53,6 +61,7 @@ class MainViewController: BaseViewController {
             .subscribe(onNext: { owner, idx in
                 owner.userViewModel.getSignedInUser(idx: idx)
                 owner.goldkeyViewModel.checkObtainableGoldkeys(idx: idx)
+                print("HI")
             })
             .disposed(by: rx.disposeBag)
 
@@ -75,31 +84,6 @@ class MainViewController: BaseViewController {
                 owner.lastHolyLevel = event.holyLevel
             })
             .disposed(by: rx.disposeBag)
-
-        goldKeyObservable
-            .map { (obtainableGoldKeyInfo) -> [VideoInformation] in
-                return [VideoInformation(kind: .vimeo(type: .day), viewable: obtainableGoldKeyInfo.weekDay),
-                        VideoInformation(kind: .vimeo(type: .night), viewable: obtainableGoldKeyInfo.weekNight),
-                        VideoInformation(kind: .vimeo(type: .live)),
-                        VideoInformation(kind: .youtube(type: .earlyLoveBible)),
-                        VideoInformation(kind: .youtube(type: .firePillarBible)),
-                        VideoInformation(kind: .youtube(type: .morningTreatBible))]
-            }
-            .do { print("ISHDGHSDIOGHSDGOI", $0) }
-            .bind(to: videoListViewModel.input.videoInfomations)
-            .disposed(by: disposeBag)
-
-        videoListViewModel.output.videoInfomations
-            .drive(mainView.videoCollectionView.collectionView.rx.items(cellIdentifier: VideoCollectionViewCell.identifier,
-                                                                        cellType: VideoCollectionViewCell.self)) { (_, element, cell) in
-                cell.configure(with: element)
-            }
-            .disposed(by: disposeBag)
-
-        mainView.videoCollectionView.collectionView.rx
-            .modelSelected(VideoInformation.self)
-            .bind(to: videoListViewModel.input.didTapVideo)
-            .disposed(by: disposeBag)
 
         let goldkeyInfoObservable = userObservable
             .flatMap { [unowned self] _ in
@@ -174,6 +158,32 @@ class MainViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
     }
+
+    func bindVideoCollectionView() {
+        videoListViewModel.output.videoInfomations
+            .drive(mainView.videoCollectionView.collectionView.rx.items(cellIdentifier: VideoCollectionViewCell.identifier,
+                                                                        cellType: VideoCollectionViewCell.self)) { (_, element, cell) in
+                cell.configure(with: element)
+            }
+            .disposed(by: disposeBag)
+
+        goldKeyObservable
+            .map { (obtainableGoldKeyInfo) -> [VideoInformation] in
+                return [VideoInformation(kind: .vimeo(type: .day), viewable: obtainableGoldKeyInfo.weekDay),
+                        VideoInformation(kind: .vimeo(type: .night), viewable: obtainableGoldKeyInfo.weekNight),
+                        VideoInformation(kind: .vimeo(type: .live)),
+                        VideoInformation(kind: .youtube(type: .earlyLoveBible)),
+                        VideoInformation(kind: .youtube(type: .firePillarBible)),
+                        VideoInformation(kind: .youtube(type: .morningTreatBible))]
+            }
+            .bind(to: videoListViewModel.input.videoInfomations)
+            .disposed(by: disposeBag)
+
+        mainView.videoCollectionView.collectionView.rx
+            .modelSelected(VideoInformation.self)
+            .bind(to: videoListViewModel.input.didTapVideo)
+            .disposed(by: disposeBag)
+    }
 }
 
 extension MainViewController {
@@ -193,14 +203,6 @@ extension MainViewController {
     func showGoldkeyObtainmentToastView(with goldkey: Int) {
         self.view.showToastView(message: "금키를 \(goldkey)개 획득했어요!")
     }
-
-    func showLevelUpToastView(previous: Int, current: Int) {
-        let levelUpToastView = UserLevelUpToastView(frame: self.view.frame)
-        self.view.addSubview(levelUpToastView)
-        levelUpToastView.removeCompletion = levelUpToastView.removeFromSuperview
-        levelUpToastView.showWithLevel(previous: previous, current: current)
-        levelUpToastView.remove(timeInterval: 4)
-    }
 }
 
 private extension MainViewController {
@@ -219,24 +221,12 @@ private extension MainViewController {
             showGoldkeyObtainmentToastView(with: obtainedGoldkey)
         }
     }
-}
 
-extension MainViewController {
-    func getVideoListViewModel() -> VideoListViewModel? {
-        guard let viewModel = self.videoListViewModel else { return nil }
-
-        goldkeyViewModel.obtainableGoldKeys
-            .map { (obtainableGoldKeyInfo) -> [VideoInformation] in
-                return [VideoInformation(kind: .vimeo(type: .day), viewable: obtainableGoldKeyInfo?.weekDay),
-                        VideoInformation(kind: .vimeo(type: .night), viewable: obtainableGoldKeyInfo?.weekNight),
-                        VideoInformation(kind: .vimeo(type: .live)),
-                        VideoInformation(kind: .youtube(type: .earlyLoveBible)),
-                        VideoInformation(kind: .youtube(type: .firePillarBible)),
-                        VideoInformation(kind: .youtube(type: .morningTreatBible))]
-            }
-            .bind(to: viewModel.input.videoInfomations)
-            .disposed(by: disposeBag)
-
-        return viewModel
+    func showLevelUpToastView(previous: Int, current: Int) {
+        let levelUpToastView = UserLevelUpToastView(frame: self.view.frame)
+        self.view.addSubview(levelUpToastView)
+        levelUpToastView.removeCompletion = levelUpToastView.removeFromSuperview
+        levelUpToastView.showWithLevel(previous: previous, current: current)
+        levelUpToastView.remove(timeInterval: 4)
     }
 }

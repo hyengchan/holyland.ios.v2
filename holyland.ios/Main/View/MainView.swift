@@ -41,6 +41,7 @@ class MainView: UIView {
 
     func setupViews() {
         backgroundColor = .white
+        goldKeyProgressBar.makeRounded(radius: goldKeyProgressBar.bounds.height / 2)
 
         addSubview(bannerBarImageView)
         addSubview(profileView)
