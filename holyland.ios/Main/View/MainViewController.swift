@@ -145,16 +145,6 @@ class MainViewController: BaseViewController {
                 self?.didChangeGoldkeyValue(values)
             })
             .disposed(by: disposeBag)
-
-        videoListViewModel.output.selectionVideo
-            .asObservable()
-            .map { result in
-                switch result.kind {
-                case
-                }
-            }
-            .drive()
-            .disposed(by: disposeBag)
     }
     
     func bindMainViewModel() {

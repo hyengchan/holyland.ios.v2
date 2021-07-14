@@ -21,6 +21,7 @@ class MainViewModel: ViewModelType {
     private let myPageSubject = PublishSubject<Void>()
     private let qrPageSubject = PublishSubject<Void>()
     private let profileSubject = PublishSubject<Void>()
+    private let didTapVideo = PublishSubject<VideoInformation.VideoKind>()
 
     private let willEnterForegroundSubject = PublishSubject<Void>()
 
@@ -33,6 +34,7 @@ class MainViewModel: ViewModelType {
         let myPageTap: PublishSubject<Void>
         let qrPageTap: PublishSubject<Void>
         let profileTap: PublishSubject<Void>
+        let didTapVideo: AnyObserver<VideoInformation.VideoKind>
     }
 
     struct Output { let willEnterForeground: Driver<Void> }
@@ -46,7 +48,8 @@ class MainViewModel: ViewModelType {
         
         input = Input(myPageTap: myPageSubject,
                       qrPageTap: qrPageSubject,
-                      profileTap: profileSubject)
+                      profileTap: profileSubject,
+                      didTapVideo: didTapVideo.asObserver())
         output = Output(willEnterForeground: willEnterForegroundSubject.asDriverOnErrorJustComplete())
     }
 

@@ -36,13 +36,3 @@ struct GoldKeyResponse: Decodable, DTO {
         case holyLevel = "holylevel"
     }
 }
-
-struct GoldKeyInfoResponse: Decodable, DTO {
-    let total: Int
-    let holyLevel: Int
-
-    enum CodingKeys: String, CodingKey {
-        case total
-        case holyLevel = "holylevel"
-    }
-}

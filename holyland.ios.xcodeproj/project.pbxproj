@@ -93,6 +93,7 @@
 		3AC7507F269D2FC7002D2802 /* MyProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7507E269D2FC7002D2802 /* MyProfileCoordinator.swift */; };
 		3AC75082269D2FF9002D2802 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC75081269D2FF9002D2802 /* MyProfileViewModel.swift */; };
 		3AC75085269D3010002D2802 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC75084269D3010002D2802 /* MyProfileViewController.swift */; };
+		3ACB5C63269D76A300D052B4 /* GoldKeyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB5C62269D76A300D052B4 /* GoldKeyInfoResponse.swift */; };
 		3AF046D92671E81500807E40 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF046D82671E81500807E40 /* Attendance.swift */; };
 		3AF45235267B1D8600BEBA5F /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */; };
 		3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */; };
@@ -199,6 +200,7 @@
 		3AC7507E269D2FC7002D2802 /* MyProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCoordinator.swift; sourceTree = "<group>"; };
 		3AC75081269D2FF9002D2802 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		3AC75084269D3010002D2802 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		3ACB5C62269D76A300D052B4 /* GoldKeyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyInfoResponse.swift; sourceTree = "<group>"; };
 		3AF046D82671E81500807E40 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		3AF45234267B1D8600BEBA5F /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		3AF45257267B1FE600BEBA5F /* AppDelegate+Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Swinject.swift"; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			children = (
 				3AB6E66526954E8C000866C8 /* UserResponse.swift */,
 				3A92D5E626967C4A00B36C06 /* GoldKeyResponse.swift */,
+				3ACB5C62269D76A300D052B4 /* GoldKeyInfoResponse.swift */,
 				3AB6E66726954EB1000866C8 /* StorableUser.swift */,
 			);
 			path = Models;
@@ -947,6 +950,7 @@
 				3AB6E66126954E48000866C8 /* UserDataSource.swift in Sources */,
 				3AB6E65D26954E0A000866C8 /* RealmStorageProtocol.swift in Sources */,
 				3A92D5EF2696980900B36C06 /* GoldKeyRouter.swift in Sources */,
+				3ACB5C63269D76A300D052B4 /* GoldKeyInfoResponse.swift in Sources */,
 				3A8A1DC126771929003E4B99 /* Date+.swift in Sources */,
 				3AB6E64D26954875000866C8 /* UserRepository.swift in Sources */,
 				3A8A1DC72677227D003E4B99 /* Worship.swift in Sources */,
