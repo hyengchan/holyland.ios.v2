@@ -86,6 +86,7 @@
 		3AB6E67B26957BC2000866C8 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67A26957BC2000866C8 /* Gender.swift */; };
 		3AB6E67D269582F0000866C8 /* AppBarUIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */; };
 		3AB6E67F269583E3000866C8 /* AppBarNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */; };
+		3ABAA6BD269ECDDB00066C3E /* GoldKeyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAA6BC269ECDDB00066C3E /* GoldKeyMapper.swift */; };
 		3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29657266EFDB000A09BB6 /* BaseViewController.swift */; };
 		3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29659266EFDD700A09BB6 /* Constant.swift */; };
 		3AC2966B266F121B00A09BB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966A266F121B00A09BB6 /* MainViewModel.swift */; };
@@ -193,6 +194,7 @@
 		3AB6E67A26957BC2000866C8 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarUIRouter.swift; sourceTree = "<group>"; };
 		3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarNetworkService.swift; sourceTree = "<group>"; };
+		3ABAA6BC269ECDDB00066C3E /* GoldKeyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyMapper.swift; sourceTree = "<group>"; };
 		3AC29657266EFDB000A09BB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AC29659266EFDD700A09BB6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3AC2966A266F121B00A09BB6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB6E65426954D6B000866C8 /* UserMapper.swift */,
+				3ABAA6BC269ECDDB00066C3E /* GoldKeyMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				3A8A1DC32677215B003E4B99 /* VideoInformation.swift in Sources */,
 				3AB6E65026954C09000866C8 /* Entity.swift in Sources */,
 				3A53D37F2665F79E00A570C1 /* MainViewController.swift in Sources */,
+				3ABAA6BD269ECDDB00066C3E /* GoldKeyMapper.swift in Sources */,
 				3AB6E6712695621C000866C8 /* NetworkService.swift in Sources */,
 				3AB13962267C2E980021BEC9 /* UITextField+.swift in Sources */,
 				3A666F68269423730069262B /* VideoCollectionViewCell.swift in Sources */,

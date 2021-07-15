@@ -37,7 +37,7 @@ class GoldKeyViewModel: ViewModelType {
     func checkObtainableGoldkeys(idx: Int) {
         goldkeyRepository.checkObtainableGoldKey(idx: idx)
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-            .compactMap { $0 }
+            .compactMap { try $0.get() }
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             //.do { print("HI")}
@@ -49,61 +49,59 @@ class GoldKeyViewModel: ViewModelType {
             .disposed(by: disposeBag)
         }
 
-    func requestWeekDayOnGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestWeekDayOnGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestWeekDayOnGoldkeyCreation(idx: idx)
     }
 
-    func requestWeekDayOffGoldkeyCreation(idx: Int) -> Observable<String?> {
+    func requestWeekDayOffGoldkeyCreation(idx: Int) -> Observable<Result<String, Error>> {
         goldkeyRepository.requestWeekDayOffGoldkeyCreation(idx: idx)
-            .catchAndReturn(nil)
     }
 
-    func requestWeekNightOnGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestWeekNightOnGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestWeekNightOnGoldkeyCreation(idx: idx)
     }
 
-    func requestWeekNightOffGoldkeyCreation(idx: Int) -> Observable<String?> {
+    func requestWeekNightOffGoldkeyCreation(idx: Int) -> Observable<Result<String, Error>> {
         goldkeyRepository.requestWeekNightOffGoldkeyCreation(idx: idx)
-            .catchAndReturn(nil)
     }
 
-    func requestLiveViewGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestLiveViewGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestLiveViewGoldkeyCreation(idx: idx)
     }
 
-    func requestEarlyLoveGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestEarlyLoveGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestEarlyLoveGoldkeyCreation(idx: idx)
     }
 
-    func requestFirePillarGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestFirePillarGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestFirePillarGoldkeyCreation(idx: idx)
     }
 
-    func requestMorningTreatGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestMorningTreatGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestMorningTreatGoldkeyCreation(idx: idx)
     }
 
-    func requestRouletteSmallGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestRouletteSmallGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestRouletteSmallGoldkeyCreation(idx: idx)
     }
 
-    func requestRouletteLargeGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestRouletteLargeGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestRouletteLargeGoldkeyCreation(idx: idx)
     }
 
-    func requestBoxCrashSmallGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestBoxCrashSmallGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestBoxCrashSmallGoldkeyCreation(idx: idx)
     }
 
-    func requestBoxCrashLargeGoldkeyCreation(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestBoxCrashLargeGoldkeyCreation(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestBoxCrashLargeGoldkeyCreation(idx: idx)
     }
 
-    func requestWeekDayOnGoldkeyCreationOfWithOtherUser(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestWeekDayOnGoldkeyCreationOfWithOtherUser(idx: Int) -> Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestWeekDayOnGoldkeyCreationOfWithOtherUser(idx: idx)
     }
 
-    func requestWeekNightOnGoldkeyCreationOfWithOtherUser(idx: Int) -> Observable<GoldKeyInfoResponse?> {
+    func requestWeekNightOnGoldkeyCreationOfWithOtherUser(idx: Int) ->  Observable<Result<GoldKeyInfoResponse, Error>> {
         goldkeyRepository.requestWeekNightOnGoldkeyCreationOfWithOtherUser(idx: idx)
     }
 }
