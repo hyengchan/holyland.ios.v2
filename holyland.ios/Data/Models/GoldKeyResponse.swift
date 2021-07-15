@@ -9,30 +9,30 @@ import Foundation
 
 struct GoldKeyResponse: Decodable, DTO {
     let weekDay: Bool
-    let weekNight: Bool
-    let liveTab: Bool
     let liveView: Bool
+    let holyLevel: Int
+    let liveTab: Bool
+    let total: Int
+    let weekNight: Bool
+    let roulette: Bool
+    let boxCrash: Bool
     let profile: Bool
     let earlyLove: Bool
     let firePillar: Bool
     let morningTreat: Bool
-    let roulette: Bool
-    let boxCrash: Bool
-    let total: Int
-    let holyLevel: Int
 
     enum CodingKeys: String, CodingKey {
         case weekDay = "week_day"
-        case weekNight = "week_night"
-        case liveTab = "live_tab"
         case liveView = "live_view"
+        case holyLevel = "holylevel"
+        case liveTab = "live_tab"
+        case total
+        case weekNight = "week_night"
+        case roulette
+        case boxCrash = "boxcrash"
         case profile
         case earlyLove = "earlylove"
         case firePillar = "firepillar"
         case morningTreat = "morningtreat"
-        case roulette
-        case boxCrash = "boxcrash"
-        case total
-        case holyLevel = "holylevel"
     }
 }
