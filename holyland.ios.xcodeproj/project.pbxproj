@@ -87,6 +87,10 @@
 		3AB6E67D269582F0000866C8 /* AppBarUIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */; };
 		3AB6E67F269583E3000866C8 /* AppBarNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */; };
 		3ABAA6BD269ECDDB00066C3E /* GoldKeyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAA6BC269ECDDB00066C3E /* GoldKeyMapper.swift */; };
+		3ABAE596269FF14300D7F2C5 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE595269FF14300D7F2C5 /* MyProfileView.swift */; };
+		3ABAE598269FF1AB00D7F2C5 /* MyProfileView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE597269FF1AB00D7F2C5 /* MyProfileView+Extension.swift */; };
+		3ABAE59B269FF8BF00D7F2C5 /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE59A269FF8BF00D7F2C5 /* EmotionCollectionViewCell.swift */; };
+		3ABAE59D269FF90C00D7F2C5 /* EmotionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE59C269FF90C00D7F2C5 /* EmotionCollectionView.swift */; };
 		3AC29658266EFDB000A09BB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29657266EFDB000A09BB6 /* BaseViewController.swift */; };
 		3AC2965A266EFDD700A09BB6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29659266EFDD700A09BB6 /* Constant.swift */; };
 		3AC2966B266F121B00A09BB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2966A266F121B00A09BB6 /* MainViewModel.swift */; };
@@ -195,6 +199,10 @@
 		3AB6E67C269582F0000866C8 /* AppBarUIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarUIRouter.swift; sourceTree = "<group>"; };
 		3AB6E67E269583E3000866C8 /* AppBarNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarNetworkService.swift; sourceTree = "<group>"; };
 		3ABAA6BC269ECDDB00066C3E /* GoldKeyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldKeyMapper.swift; sourceTree = "<group>"; };
+		3ABAE595269FF14300D7F2C5 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		3ABAE597269FF1AB00D7F2C5 /* MyProfileView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyProfileView+Extension.swift"; sourceTree = "<group>"; };
+		3ABAE59A269FF8BF00D7F2C5 /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		3ABAE59C269FF90C00D7F2C5 /* EmotionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionView.swift; sourceTree = "<group>"; };
 		3AC29657266EFDB000A09BB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AC29659266EFDD700A09BB6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3AC2966A266F121B00A09BB6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -587,6 +595,15 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		3ABAE599269FF8AB00D7F2C5 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				3ABAE59C269FF90C00D7F2C5 /* EmotionCollectionView.swift */,
+				3ABAE59A269FF8BF00D7F2C5 /* EmotionCollectionViewCell.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		3AC29656266EFDA200A09BB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,7 +689,10 @@
 		3AC75083269D2FFD002D2802 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3ABAE599269FF8AB00D7F2C5 /* SubView */,
 				3AC75084269D3010002D2802 /* MyProfileViewController.swift */,
+				3ABAE595269FF14300D7F2C5 /* MyProfileView.swift */,
+				3ABAE597269FF1AB00D7F2C5 /* MyProfileView+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -918,6 +938,7 @@
 				3A92D5ED269681CC00B36C06 /* GoldKeyDataSource.swift in Sources */,
 				3A866D56268ECDDE00778BBF /* QRPageViewModel.swift in Sources */,
 				3AB6E65826954DAE000866C8 /* UserRepositoryImpl.swift in Sources */,
+				3ABAE59D269FF90C00D7F2C5 /* EmotionCollectionView.swift in Sources */,
 				3AF6F9452681BC1800027D8E /* AppCoordinator.swift in Sources */,
 				3AB6E67F269583E3000866C8 /* AppBarNetworkService.swift in Sources */,
 				3AB13960267C2E5F0021BEC9 /* RoundedButton.swift in Sources */,
@@ -927,6 +948,7 @@
 				3AB6E66626954E8C000866C8 /* UserResponse.swift in Sources */,
 				3AC75082269D2FF9002D2802 /* MyProfileViewModel.swift in Sources */,
 				3A92D5EB269681A900B36C06 /* GoldKeyRepositoryImpl.swift in Sources */,
+				3ABAE596269FF14300D7F2C5 /* MyProfileView.swift in Sources */,
 				3AAEF3CE267305B10006E6FE /* VideoCollectionView.swift in Sources */,
 				3A866D4C268EADC700778BBF /* MyPageCoordinator.swift in Sources */,
 				3A7CAA39266EDFDE0048E41F /* XCAssets+Generated.swift in Sources */,
@@ -956,6 +978,7 @@
 				3A92D5EF2696980900B36C06 /* GoldKeyRouter.swift in Sources */,
 				3ACB5C63269D76A300D052B4 /* GoldKeyInfoResponse.swift in Sources */,
 				3A8A1DC126771929003E4B99 /* Date+.swift in Sources */,
+				3ABAE59B269FF8BF00D7F2C5 /* EmotionCollectionViewCell.swift in Sources */,
 				3AB6E64D26954875000866C8 /* UserRepository.swift in Sources */,
 				3A8A1DC72677227D003E4B99 /* Worship.swift in Sources */,
 				3AAEF39E267302530006E6FE /* UIApplication+.swift in Sources */,
@@ -972,6 +995,7 @@
 				3A92D5F126969A0000B36C06 /* GoldKeyNetworkService.swift in Sources */,
 				3AC75085269D3010002D2802 /* MyProfileViewController.swift in Sources */,
 				3A60766526981FBC00435C86 /* GoldKeyViewModel.swift in Sources */,
+				3ABAE598269FF1AB00D7F2C5 /* MyProfileView+Extension.swift in Sources */,
 				3AF45258267B1FE600BEBA5F /* AppDelegate+Swinject.swift in Sources */,
 				3A8A1DB62676FA83003E4B99 /* TitleMessageAlertView.swift in Sources */,
 				3AC7507F269D2FC7002D2802 /* MyProfileCoordinator.swift in Sources */,

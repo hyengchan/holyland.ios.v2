@@ -73,17 +73,19 @@ class LoginViewModel {
                         loginErrorsObservable: invalidLoginErrorsSubject.asDriverOnErrorJustComplete())
 
         signInObservable
-            .subscribe(onNext: { [unowned self] response in
+            .withUnretained(self)
+            .addSchedulers()
+            .subscribe(onNext: { (owner, response) in
                 switch response {
                 case .success(let idx):
                     UserPersistentStorage.loggedInIdx = idx
-                    self.signInResultSubject.onNext(idx)
+                    owner.signInResultSubject.onNext(idx)
 
                 case .failure(let error):
-                    if error is NetworkError, error as? NetworkError == NetworkError.endpointError {
-                        self.serverConnectionErrorsSubject.onNext(error)
-                    } else {
-                        self.invalidLoginErrorsSubject.onNext(error)
+                    if case NetworkError.endpointError = error {
+                        owner.serverConnectionErrorsSubject.onNext(error)
+                    } else if case SerializationError.decodingFailed = error {
+                        owner.invalidLoginErrorsSubject.onNext(error)
                     }
                 }
             })

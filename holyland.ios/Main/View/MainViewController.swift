@@ -189,11 +189,6 @@ class MainViewController: BaseViewController {
 extension MainViewController {
     func setupViews() {
         view = mainView
-        setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        setupNavigationBackgroundColor(Asset.Color.lemon.color)
     }
     
     func showUnableToWorshipAlert() {

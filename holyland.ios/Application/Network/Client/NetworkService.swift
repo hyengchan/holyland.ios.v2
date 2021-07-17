@@ -53,8 +53,8 @@ open class NetworkService {
                         print("JSONSerialization Error : ", error.localizedDescription)
                         return Single.just(.failure(SerializationError.decodingFailed))
                     }
-                case .failure(let error):
-                    return Single.just(.failure(error))
+                case .failure(_):
+                    return Single.just(.failure(NetworkError.endpointError))
                 }
             }
     }

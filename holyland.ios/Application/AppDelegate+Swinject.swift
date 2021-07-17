@@ -120,6 +120,7 @@ extension AppDelegate {
         container.register(MyProfileViewController.self) { resolver in
             let viewController = MyProfileViewController()
             viewController.viewModel = resolver.resolve(MyProfileViewModel.self)
+            viewController.userViewModel = resolver.resolve(UserViewModel.self)
             return viewController
         }
     }

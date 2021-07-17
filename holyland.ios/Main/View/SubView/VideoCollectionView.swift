@@ -19,14 +19,6 @@ class VideoCollectionView: UIView {
 
     var collectionView: UICollectionView!
 
-//    private var viewModel: VideoListViewModel!
-
-    init(frame: CGRect, viewModel: VideoListViewModel) {
-        super.init(frame: frame)
-//        self.viewModel = viewModel
-        commonInit()
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
